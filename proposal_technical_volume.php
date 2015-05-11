@@ -14,7 +14,6 @@
     <main role="main">
       <div class="wrap">
         <form action="proposal_progress_report.php">
-          <h1>Technical volume</h1>
           <section class="fieldset fieldset-radio">
             <h1>Have you reviewed all the requirements in the Air Force and DoD Solicitation instructions?</h1>
             <div class="field field-radio">
