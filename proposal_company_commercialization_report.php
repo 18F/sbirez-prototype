@@ -7,108 +7,63 @@
       <div class="wrap">
         <ol class="breadcrumbs">
           <li><a href="proposal_progress_report.php">Proposal</a></li>
-          <li>Cover Sheet</li>
+          <li>Company commercialization report</li>
         </ol>
       </div>
     </header>
     <main role="main">
       <div class="wrap">
         <form action="proposal_progress_report.php">
-          <h1>Technical volume</h1>
-          <section class="fieldset fieldset-radio">
-            <h1>Have you reviewed all the requirements in the Air Force and DoD Solicitation instructions?</h1>
-            <div class="field field-radio">
+          <section class="fieldset">
+            <h1>Contact information</h1>
+            <div class="field field-select field-honorific">
               <label>
-                <input type="radio" name="reviewed-requirements" id="reviewed-requirements-yes" value="yes">
-                <span class="label-text">Yes</span>
+                <span class="label-text">Honorific</span>
+                <select>
+                  <option>None</option>
+                  <option>Dr.</option>
+                  <option>Mr.</option>
+                  <option>Ms.</option>
+                  <option>Mrs.</option>
+                  <option>Miss.</option>
+                </select>
               </label>
             </div>
-            <div class="field field-radio">
+            <div class="field field-name">
               <label>
-                <input type="radio" name="reviewed-requirements" id="reviewed-requirements-no" value="no">
-                <span class="label-text">No</span>
+                <span class="label-text">Name</span>
+                <input type="text" name="principal-investigator-name" id="principal-investigator-name" value="">
               </label>
             </div>
-          </section>
-          <section class="fieldset fieldset-radio">
-            <h1>Is the technical volume a single portable document format (PDF) file, including graphics?</h1>
-            <div class="field field-radio">
+            <div class="field field-title">
               <label>
-                <input type="radio" name="pdf" id="pdf-yes" value="yes">
-                <span class="label-text">Yes</span>
+                <span class="label-text">Title</span>
+                <input type="text" name="principal-investigator-title" id="principal-investigator-title" value="">
               </label>
             </div>
-            <div class="field field-radio">
+            <div class="field field-phone">
               <label>
-                <input type="radio" name="pdf" id="pdf-no" value="no">
-                <span class="label-text">No</span>
+                <span class="label-text">Phone</span>
+                <input type="text" name="principal-investigator-phone" id="principal-investigator-phone" value="">
               </label>
             </div>
-          </section>
-          <section class="fieldset fieldset-radio">
-            <h1>Did you virus scan the document?</h1>
-            <div class="field field-radio">
+            <div class="field field-fax">
               <label>
-                <input type="radio" name="virus-scan" id="virus-scan-yes" value="yes">
-                <span class="label-text">Yes</span>
+                <span class="label-text">Fax</span>
+                <input type="text" name="principal-investigator-fax" id="principal-investigator-fax" value="">
               </label>
             </div>
-            <div class="field field-radio">
+            <div class="field field-email">
               <label>
-                <input type="radio" name="virus-scan" id="virus-scan-no" value="no">
-                <span class="label-text">No</span>
-              </label>
-            </div>
-          </section>
-          <section class="fieldset fieldset-radio">
-            <h1>Is the document less than or equal to twenty pages in length?</h1>
-            <div class="field field-radio">
-              <label>
-                <input type="radio" name="length" id="length-yes" value="yes">
-                <span class="label-text">Yes</span>
-              </label>
-            </div>
-            <div class="field field-radio">
-              <label>
-                <input type="radio" name="length" id="length-no" value="no">
-                <span class="label-text">No</span>
+                <span class="label-text">Email</span>
+                <input type="email" name="principal-investigator-email" id="principal-investigator-email" value="">
               </label>
             </div>
           </section>
-          <section class="fieldset fieldset-radio">
-            <h1>Is the font 10 pt. or larger on 8-1/2" &times; 11" paper with one-inch margins?</h1>
-            <div class="field field-radio">
-              <label>
-                <input type="radio" name="formatting" id="formatting-yes" value="yes">
-                <span class="label-text">Yes</span>
-              </label>
-            </div>
-            <div class="field field-radio">
-              <label>
-                <input type="radio" name="formatting" id="formatting-no" value="no">
-                <span class="label-text">No</span>
-              </label>
-            </div>
-          </section>
-          <section class="fieldset fieldset-radio">
-            <h1>Does the document contain a header with the company name, topic number, and proposal number? This header can exist in the margin.</h1>
-            <div class="field field-radio">
-              <label>
-                <input type="radio" name="formatting" id="formatting-yes" value="yes">
-                <span class="label-text">Yes</span>
-              </label>
-            </div>
-            <div class="field field-radio">
-              <label>
-                <input type="radio" name="formatting" id="formatting-no" value="no">
-                <span class="label-text">No</span>
-              </label>
-            </div>
-          </section>
-          <div class="field">
+          <div class="field field-textarea">
             <label>
-              <span class="label-text">Upload technical volume</span>
-              <input type="file">
+              <span class="label-text">What&rsquo;s this company&rsquo;s commercialization track record?</span>
+              <textarea id="track-record" name="track-record"></textarea>
             </label>
           </div>
 

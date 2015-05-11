@@ -49,17 +49,44 @@ div.wrap::after{
 label { display: block; }
 
 input[type=text],
+input[type=email],
 input[type=search],
+select,
 textarea{
 	-webkit-appearance: none;
-	padding: 4px;
+	padding: 4px 8px;
 	border: 1px solid #ccc;
+	border-radius: 0;
 	line-height: 36px;
 	min-height: 36px;
-	min-width: 20em;
+	min-width: 10em;
+	width: 100%;
 	margin: 0;
 	font: inherit;
 }
+
+.field-select select{
+	min-width: 0; 
+	background: none;
+}
+
+.field-select{ 
+	position: relative; 
+	width: 12.5%;
+}
+
+.field-select::after{
+	content: "";
+	border: 6px solid black;
+	position: absolute;
+	right: 8px;
+	bottom: 10px;
+	border-color: #aaa transparent transparent transparent;
+	z-index: -1;
+}
+
+.field-select:hover select{ border-color: #aaa; }
+.field-select:hover::after{ border-top-color: #888; }
 
 textarea{
 	display: block;
@@ -90,11 +117,14 @@ button:active {
 	border-color: #006e52;
 }
 
-form > h1 {
-	margin-top: 1em;
+form > h1 ,
+.fieldset-labor-related-costs > header > h1,
+.fieldset-direct-material-costs > header > h1 {
+	margin-top: 8px;
 	margin-bottom: 1em;
-	font-size: 28px;
+	font-size: 27px;
 	line-height: 32px;
+	color: #444;
 	font-family: Georgia;
 }
 
@@ -103,37 +133,50 @@ section.fieldset,
 section.fieldset.fieldset-radio{ margin-bottom: 24px; }
 
 section.fieldset{
-	border: 1px solid #bbb;
+	border: 1px solid #cfcfcf;
 	padding: 20px 16px 16px;
 	position: relative;
 	margin-bottom: 20px;
 }
 
+.fieldset+.fieldset:not(.fieldset-radio){ margin-top: 32px; }
+
+.fieldset-principal-investigator .fieldset:last-of-type,
+.fieldset-labor-related-cost .field:last-of-type,
+.fieldset-direct-material-cost .field:last-of-type{
+	margin-bottom: 2px;
+}
+
 section.fieldset > h1{
 	position: absolute;
 	background: white;
-	margin: 0 0 -4px;
+	margin: 0 0 -3px;
 	bottom: 100%;
-	left: 16px;
+	left: 8px;
 	padding: 0 1px;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 16px;
 	font-weight: 600;
-	color: #666;
+	color: #5a5a5a;
 }
 
 section.fieldset div.field:last-of-type+section.fieldset{
 	margin-top: 24px;
 }
 
-section.fieldset.fieldset-radio{
+.fieldset.fieldset-labor-related-costs,
+.fieldset.fieldset-direct-material-costs,
+.fieldset.fieldset-discretionary-technical-assistance,
+.fieldset.fieldset-equivalent-work,
+.fieldset.fieldset-equivalent-work .fieldset,
+.fieldset.fieldset-radio{
 	padding: 0;
 	border: none;
-	margin: 00;
 }
 
+.fieldset.fieldset-equivalent-work-detail > h1{ display: none; }
+
 section.fieldset.fieldset-radio > h1,
-section.fieldset.fieldset-checkbox > h1,
 div.field span.label-text{
 	display: block;	
 	max-width: 40em;
@@ -145,10 +188,11 @@ div.field span.label-text{
 	color: inherit;
 }
 
-
-section.fieldset.fieldset-checkbox > h1{ display: none; }
-
-div.field.field-radio{ display: inline-block; }
+div.field.field-radio{ 
+	display: inline-block; 
+	vertical-align: middle;
+	margin-bottom: 0;
+}
 div.field.field-radio label{
 	display: inline-block;
 	padding: 0 12px 4px 12px;
@@ -184,22 +228,41 @@ div.field.field-checkbox input{
 
 div.field.field-checkbox+div.field.field-checkbox{ margin-top: 4px; }
 
-/* Need to fix this. Not all branches are sets of fields. */
-
-section.is-branch{
-	padding: 8px 0 0 12px;
-	position: relative;
-	margin-top: -8px;
-	border: none;
-}
-
-div.field.field-checkbox+section.fieldset.is-branch{
-	margin-top: 4px;
+div.field.field-checkbox+.is-branch{
+	margin-top: -4px !important;
 	margin-left: 3px;
 	margin-bottom: 16px;
 }
 
-section.fieldset.is-branch::after{
+/* @group widths */
+
+.field-name,
+.field-title,
+.field-email,
+.field-category{
+	width: 50%;
+}
+
+.field-phone,
+.field-fax,
+.field-rate,
+.field-estimated-hours,
+.field-overhead,
+.field-fringe-benefits input{
+	width: 33%;
+}
+
+/* @end */
+
+
+.is-branch{
+	padding: 8px 0 0 12px !important;
+	margin-top: -12px !important;
+	position: relative;
+	border: none !important;
+}
+
+.is-branch::after{
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -211,8 +274,12 @@ section.fieldset.is-branch::after{
 }
 
 
+.is-branch{
+}
+
 main form {
 	border-right: 1px solid #eee;
+	padding-top: 8px;
 	padding-right: 16px;
 	max-width: 640px;
 }
@@ -290,7 +357,10 @@ header.banner nav a:hover{ color: #a3d3ff; }
 header.banner form span.label-text,
 header.banner form button{ position: absolute; left: -9999em; }
 
-header.banner form div.field{ position: relative; }
+header.banner form div.field{ 
+	position: relative; 
+	margin: 0;
+}
 header.banner form div.field::after{
 	background: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><path fill="#fff" d="M31.008 27.231l-7.58-6.447c-0.784-0.705-1.622-1.029-2.299-0.998 1.789-2.096 2.87-4.815 2.87-7.787 0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12c2.972 0 5.691-1.081 7.787-2.87-0.031 0.677 0.293 1.515 0.998 2.299l6.447 7.58c1.104 1.226 2.907 1.33 4.007 0.23s0.997-2.903-0.23-4.007zM12 20c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"></path></svg>');
 	background-size: 100%;
@@ -500,12 +570,13 @@ nav.pagination a.pagination-next{
 
 /* @end */
 
-/* @group proposal */
+/* @group body.proposal-progress-report */
 
 /* @group header */
 
 header.banner+header.proposal-banner{
 	margin-top: -24px;
+	margin-bottom: 24px;
 }
 
 header.proposal-banner{
@@ -539,7 +610,7 @@ header.proposal-banner ol li a:hover{color: #555; }
 /* @group content */
 
 
-body.proposal aside h1{
+body.proposal.proposal-progress-report aside h1{
 	font-size: 14px;
 	text-transform: uppercase;
 	font-family: Georgia;
@@ -551,14 +622,14 @@ body.proposal aside h1{
 }
 
 
-body.proposal aside{ 
+body.proposal.proposal-progress-report aside{ 
 	padding-left: 72px;
 	margin-top: 2em;
 	position: relative; 
 }
 
 
-body.proposal aside img{
+body.proposal.proposal-progress-report aside img{
 	width: 64px;
 	height: 64px;
 	border-radius: 100%;
@@ -567,13 +638,13 @@ body.proposal aside img{
 	top: 2.4em;
 }
 
-body.proposal aside img+span{
+body.proposal.proposal-progress-report aside img+span{
 	display: block;
 	max-width: none;
 }
 
-body.proposal aside div,
-body.proposal aside span{
+body.proposal.proposal-progress-report aside div,
+body.proposal.proposal-progress-report aside span{
 	line-height: 1.3em;
 	max-width: 10em;
 	font-size: 14px;	
@@ -599,7 +670,7 @@ body.proposal aside span{
 	body.proposal.proposal-progress-report main.proposal-content div.wrap aside h1{
 		margin-left: 0; 
 	}
-	body.proposal aside img{
+	body.proposal.proposal-progress-report main.proposal-content img{
 		display: block;
 		position: static;
 		width: 128px;
@@ -650,3 +721,45 @@ footer.proposal-footer div.wrap{
 	border-top: 3px solid #f3f3f3;
 	padding-top: 1em;
 }
+
+/* @group cost volume */
+
+.fieldset-labor-related-costs > header h1,
+.fieldset-direct-material-costs > header h1{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.fieldset-labor-related-costs > header a,
+.fieldset-direct-material-costs > header a{
+	background: none;
+	border: 1px solid;
+	color: #a50;
+	font: inherit;
+	padding: 6px 8px;
+	font-size: 14px;
+	margin: 0 0 0 0.4em;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	top: -9px;
+}
+
+.fieldset-labor-related-costs > header a:hover,
+.fieldset-direct-material-costs > header a:hover {
+	background: #cb4d00;
+	border-color: #cb4d00;
+	color: white;
+}
+
+.fieldset-labor-related-costs > header a:active,
+.fieldset-direct-material-costs > header a:active {
+	color: #c6bb96;
+	background: #7e2000;
+	border-color: #7e2000;
+}
+
+
+/* @end */

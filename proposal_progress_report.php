@@ -15,7 +15,7 @@
           <p>SBIR proposals are comprised of four parts, listed below. We&rsquo;ll help you submit your proposal by filling out the necessary paperwork, one step at a time.</p>
           <ol>
             <li>
-              <a href="proposal_cover_sheet_proposal_information.php">Cover sheet</a>
+              Cover sheet
               <ol>
                 <li><a href="proposal_cover_sheet_proposal_information.php">Proposal information</a></li>
                 <li><a href="proposal_cover_sheet_project_team_information.php">Project team information</a></li>

@@ -21,7 +21,7 @@
               <input type="text" id="proposed-cost" />
             </label>
           </div>
-          <section class="fieldset">
+          <section class="fieldset fieldset-discretionary-technical-assistance">
             <section class="fieldset fieldset-radio">
               <h1>Does the proposed cost include discretionary technical assistance (<abbr title="discretionary technical assistance">DTA</abbr>?</h1>
               <div class="field field-radio">
@@ -37,14 +37,14 @@
                 </label>
               </div>
             </section>
-            <section class="fieldset is-branch">
+            <aside class="is-branch">
               <div class="field">
                 <span class="label-text">What is the proposed <abbr title="discretionary technical assistance">DTA</abbr> amount?</span>
                 <input type="text" id="dta-amount" name="dta-amount" />
               </div>
-            </section>
+            </aside>
           </section>
-          <section class="fieldset">
+          <section class="fieldset fieldset-equivalent-work">
             <section class="fieldset fieldset-radio">
               <h1>Has a proposal for essentially equivalent work been submitted to other <abbr title="United States">U.S.</abbr> government agencies or <abbr title="Department of Defense">D.o.D.</abbr> component?</h1>
               <div class="field field-radio">
@@ -60,7 +60,7 @@
                 </label>
               </div>
             </section>
-            <section class="fieldset is-branch">
+            <aside class="fieldset fieldset-equivalent-work-detail is-branch">
               <h1>Equivalent work</h1>
               <div class="field field-text">
                 <label>
@@ -84,17 +84,16 @@
                     </label>
                   </div>
                 </section>
-                <section class="fieldset is-branch">
-                  <h1>Equivalent work award number</h1>
+                <aside class="is-branch">
                   <div class="field field-text">
                     <label>
                       <span class="label-text">Please provide the contract number:</span>
                       <input type="text" name="equivalent-work-award-number" id="equivalent-work-award-number" value=""> 
                     </label>
                   </div>
-                </section>
+                </aside>
               </section>
-            </section>
+            </aside>
           </section>
           <section class="fieldset fieldset-radio">
             <h1>Are you submitting assertions in accordance with DFARS 252.227-7017 "Identification and assertions use, release, or disclosure restriction"? See <a href="#">Section 11.5 of the solicitation</a>.</h1>
@@ -140,7 +139,7 @@
           </div>
           <footer>
             <button>Save and continue</button>
-            <a href="#">Cancel</a>
+            <a href="proposal_progress_report.php">Cancel</a>
             <p>You can also <button>Save and return to the proposal progress report</button></p>
           </footer>
         </form>

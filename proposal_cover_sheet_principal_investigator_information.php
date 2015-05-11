@@ -15,36 +15,36 @@
       <div class="wrap">
         <form action="proposal_progress_report.php">
           <h1>Principal Investigator (PI) / Corporate Official (CO) Information</h1>
-          <section class="fieldset">
+          <section class="fieldset fieldset-principal-investigator">
             <h1>Principal investigator</h1>
-            <div class="field">
+            <div class="field field-name">
               <label>
                 <span class="label-text">Name</span>
                 <input type="text" name="principal-investigator-name" id="principal-investigator-name" value="">
               </label>
             </div>
-            <div class="field">
+            <div class="field field-title">
               <label>
                 <span class="label-text">Title</span>
-                <input type="text" name="principal-investigator-title" id="principal-investigator-name" value="">
+                <input type="text" name="principal-investigator-title" id="principal-investigator-title" value="">
               </label>
             </div>
-            <div class="field">
+            <div class="field field-phone">
               <label>
                 <span class="label-text">Phone</span>
-                <input type="text" name="principal-investigator-phone" id="principal-investigator-name" value="">
+                <input type="text" name="principal-investigator-phone" id="principal-investigator-phone" value="">
               </label>
             </div>
-            <div class="field">
+            <div class="field field-fax">
               <label>
                 <span class="label-text">Fax</span>
-                <input type="text" name="principal-investigator-fax" id="principal-investigator-name" value="">
+                <input type="text" name="principal-investigator-fax" id="principal-investigator-fax" value="">
               </label>
             </div>
-            <div class="field">
+            <div class="field field-email">
               <label>
                 <span class="label-text">Email</span>
-                <input type="text" name="principal-investigator-email" id="principal-investigator-name" value="">
+                <input type="email" name="principal-investigator-email" id="principal-investigator-email" value="">
               </label>
             </div>
             <section class="fieldset fieldset-radio">
@@ -80,34 +80,34 @@
           </section>
           <section class="fieldset">
             <h1>Corporate Official (Business)</h1>
-            <div class="field">
+            <div class="field field-name">
               <label>
                 <span class="label-text">Name</span>
                 <input type="text" name="corporate-official-name" id="corporate-official-name" value="">
               </label>
             </div>
-            <div class="field">
+            <div class="field field-title">
               <label>
                 <span class="label-text">Title</span>
-                <input type="text" name="corporate-official-title" id="corporate-official-name" value="">
+                <input type="text" name="corporate-official-title" id="corporate-official-title" value="">
               </label>
             </div>
-            <div class="field">
+            <div class="field field-phone">
               <label>
                 <span class="label-text">Phone</span>
-                <input type="text" name="corporate-official-phone" id="corporate-official-name" value="">
+                <input type="text" name="corporate-official-phone" id="corporate-official-phone" value="">
               </label>
             </div>
-            <div class="field">
+            <div class="field field-fax">
               <label>
                 <span class="label-text">Fax</span>
-                <input type="text" name="corporate-official-fax" id="corporate-official-name" value="">
+                <input type="text" name="corporate-official-fax" id="corporate-official-fax" value="">
               </label>
             </div>
-            <div class="field">
+            <div class="field field-email">
               <label>
                 <span class="label-text">Email</span>
-                <input type="text" name="corporate-official-email" id="corporate-official-name" value="">
+                <input type="text" name="corporate-official-email" id="corporate-official-email" value="">
               </label>
             </div>          </section>
           <section class="fieldset fieldset-radio">
