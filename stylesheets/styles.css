@@ -2,6 +2,10 @@
 
 /* @override http://localhost:4000/stylesheets/styles.css */
 
+/* @override http://localhost:4000/stylesheets/styles.css */
+
+/* @group bootstrap */
+
 body{
 	font-family: helvetica neue, helvetica, sans-serif;
 	font-size: 16px;
@@ -10,6 +14,7 @@ body{
 }
 
 a{ color: #0064be; }
+a:hover{ color: #003c72; text-decoration: none;}
 
 p {
 	line-height: 1.4em;
@@ -35,6 +40,10 @@ div.wrap::after{
 	clear: both;
 }
 
+
+
+/* @end */
+
 /* @group forms */
 
 label { display: block; }
@@ -43,10 +52,10 @@ input[type=text],
 input[type=search],
 textarea{
 	-webkit-appearance: none;
-	padding: 0.2em;
+	padding: 4px;
 	border: 1px solid #ccc;
-	line-height: 32px;
-	min-height: 32px;
+	line-height: 36px;
+	min-height: 36px;
 	min-width: 20em;
 	margin: 0;
 	font: inherit;
@@ -61,62 +70,189 @@ textarea{
 
 button {
 	background: none;
-	border: 2px solid green;
-	color: green;
+	border: 2px solid;
+	color: #008c52;
 	font: inherit;
-	padding: 0.6em 1em;
+	padding: 12px 16px;
 	margin: 0;	
+	cursor: pointer;
+}
+
+button:hover {
+	background: #008c52;
+	border-color: #008c52;
+	color: white;
+}
+
+button:active {
+	color: #7aa79d;
+	background: #006e52;
+	border-color: #006e52;
 }
 
 form > h1 {
 	margin-top: 1em;
 	margin-bottom: 1em;
 	font-size: 28px;
+	line-height: 32px;
 	font-family: Georgia;
 }
 
-div.field.field-text,
-div.field.field-textarea,
+div.field,
+section.fieldset,
+section.fieldset.fieldset-radio{ margin-bottom: 24px; }
+
+section.fieldset{
+	border: 1px solid #bbb;
+	padding: 20px 16px 16px;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+section.fieldset > h1{
+	position: absolute;
+	background: white;
+	margin: 0 0 -4px;
+	bottom: 100%;
+	left: 16px;
+	padding: 0 1px;
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 600;
+	color: #666;
+}
+
+section.fieldset div.field:last-of-type+section.fieldset{
+	margin-top: 24px;
+}
+
 section.fieldset.fieldset-radio{
-	margin-bottom: 1.8em;
+	padding: 0;
+	border: none;
+	margin: 00;
 }
 
 section.fieldset.fieldset-radio > h1,
+section.fieldset.fieldset-checkbox > h1,
 div.field span.label-text{
 	display: block;	
-	line-height: 1.3em;
 	max-width: 40em;
-	margin-bottom: 0.8em;
+	margin: 0 0 8px;
+	padding: 0;
+	position: static;
+	font: inherit;
+	line-height: 20px;
+	color: inherit;
 }
 
-section.fieldset > h1{ display: none; }
+
+section.fieldset.fieldset-checkbox > h1{ display: none; }
 
 div.field.field-radio{ display: inline-block; }
 div.field.field-radio label{
 	display: inline-block;
-	padding: 6px 8px 6px 6px;
+	padding: 0 12px 4px 12px;
 	border: 1px solid #ccc;
+	min-height: 32px;
+	line-height: 32px;
 	vertical-align: middle;
 }
 
+div.field.field-radio.is-focused label{
+	background: yellow;
+}
+
+div.field.field-checkbox span.label-text,
 div.field.field-radio span.label-text,
 div.field.field-radio input{ 
 	display: inline; 
 	vertical-align: middle;
 }
 
-section.fieldset.is-branch{
-	padding: 0.2em 0 0 0.7em;
-	border-left: 0.3em solid #ccc;
-	margin-top: 1.8em;
-	display: none;
+div.field.field-checkbox{
+	position: relative;
+	padding-left: 24px;
+	margin-bottom: 8px;
+}
+div.field.field-checkbox input{ 
+	font-size: 1em;	
+	line-height: 1;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 
+div.field.field-checkbox+div.field.field-checkbox{ margin-top: 4px; }
+
+/* Need to fix this. Not all branches are sets of fields. */
+
+section.is-branch{
+	padding: 8px 0 0 12px;
+	position: relative;
+	margin-top: -8px;
+	border: none;
+}
+
+div.field.field-checkbox+section.fieldset.is-branch{
+	margin-top: 4px;
+	margin-left: 3px;
+	margin-bottom: 16px;
+}
+
+section.fieldset.is-branch::after{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: -1px;
+	width: 3px;
+	border-radius: 99em;
+	content: "";
+	background: #e3e3e3;
+}
+
+
 main form {
-	border-right: 3px solid #f3f3f3;
-	padding-right: 32px;
+	border-right: 1px solid #eee;
+	padding-right: 16px;
 	max-width: 640px;
 }
+
+main form footer{ 
+	margin-top: 32px; 
+	position: relative;
+}
+
+main form footer a{
+	position: absolute;
+	right: 0;
+	top: 12px;
+}
+
+main form footer a:hover{ color: #333; }
+main form footer p{
+	clear: both;
+	font-family: Georgia;
+	font-style: italic;
+	color: #888;
+	background: #f3f3f3;
+	padding: 12px;
+	max-width: none;
+	margin-top: 24px;
+	font-size: 14px;
+}
+main form footer p button{
+	display: inline;
+	float: none;
+	padding: 4px 8px;
+	color: #555;
+	background: white;
+	border: 2px solid #ccc;
+	font-family: Helvetica;
+	font-style: normal;
+	margin-left: 0.2em;
+ }
+
+
 /* @end */
 
 /* @group header.banner */
@@ -156,7 +292,7 @@ header.banner form button{ position: absolute; left: -9999em; }
 
 header.banner form div.field{ position: relative; }
 header.banner form div.field::after{
-	background: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><path fill="#ccc" d="M31.008 27.231l-7.58-6.447c-0.784-0.705-1.622-1.029-2.299-0.998 1.789-2.096 2.87-4.815 2.87-7.787 0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12c2.972 0 5.691-1.081 7.787-2.87-0.031 0.677 0.293 1.515 0.998 2.299l6.447 7.58c1.104 1.226 2.907 1.33 4.007 0.23s0.997-2.903-0.23-4.007zM12 20c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"></path></svg>');
+	background: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><path fill="#fff" d="M31.008 27.231l-7.58-6.447c-0.784-0.705-1.622-1.029-2.299-0.998 1.789-2.096 2.87-4.815 2.87-7.787 0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12c2.972 0 5.691-1.081 7.787-2.87-0.031 0.677 0.293 1.515 0.998 2.299l6.447 7.58c1.104 1.226 2.907 1.33 4.007 0.23s0.997-2.903-0.23-4.007zM12 20c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"></path></svg>');
 	background-size: 100%;
 	position: absolute;
 	left: 8px;
@@ -175,6 +311,11 @@ header.banner form div.field input {
 	min-height: 24px;
 	padding-left: 20px;
 	width: 100%;
+	background: #032353;
+	color: #fff;
+}
+
+header.banner form div.field input:active {
 }
 
 @media screen and (min-width: 853.33px) {
@@ -263,7 +404,10 @@ article.topic nav button{
 }
 
 article.topic nav a:hover,
-article.topic nav button:hover{ color: #032353; }
+article.topic nav button:hover{ 
+	color: #032353; 
+	text-decoration: none;
+}
 
 article.topic nav button.button-remove{ color: red; }
 article.topic nav button.button-remove:hover{ color: #ab1502; }

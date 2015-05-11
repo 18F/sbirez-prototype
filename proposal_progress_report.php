@@ -24,7 +24,7 @@
             </li>
             <li><a href="proposal_technical_volume.php">Technical volume</a></li>
             <li><a href="proposal_cost_volume.php">Cost volume</a></li>
-            <li><a href="#">Company commercialization report</a></li>
+            <li><a href="proposal_company_commercialization_report.php">Company commercialization report</a></li>
           </ol>
           <form action="proposal_cover_sheet_proposal_information.php">
             <button>Get started</button>

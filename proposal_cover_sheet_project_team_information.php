@@ -13,7 +13,7 @@
     </header>
     <main role="main">
       <div class="wrap">
-        <form action="proposal_progress_report.php">
+        <form action="proposal_cover_sheet_principal_investigator_information.php">
           <h1>Project team information</h1>
           <section class="fieldset fieldset-radio">
             <h1>Are teaming partners or subcontractors proposed?</h1>
@@ -34,7 +34,7 @@
             <h1>Will you be working with a&hellip;</h1>
             <div class="field field-checkbox">
               <label>
-                <input type="checkbox" name="working-with-a" id="working-with-a-university" value="university">
+                <input type="checkbox" name="working-with-a" id="working-with-a-university" value="university" checked>
                 <span class="label-text">University</span>
               </label>
             </div>

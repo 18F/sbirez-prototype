@@ -49,13 +49,13 @@
             </div>
             <section class="fieldset fieldset-radio">
               <h1>Is this person a woman?</h1>
-              <div class="field field-checkbox">
+              <div class="field field-radio">
                 <label>
                   <input type="radio" name="woman" id="woman-yes" value="yes">
                   <span class="label-text">Yes</span>
                 </label>
               </div>
-              <div class="field field-checkbox">
+              <div class="field field-radio">
                 <label>
                   <input type="radio" name="woman" id="woman-no" value="no">
                   <span class="label-text">No</span>
@@ -64,15 +64,15 @@
             </section>
             <section class="fieldset fieldset-radio">
               <h1>Is this person socially/economically disadvantaged?</h1>
-              <div class="field field-checkbox">
+              <div class="field field-radio">
                 <label>
-                  <input type="radio" name="disadvantaged" id="disadvantaged-yes" value="yes">
+                  <input type="radio" name="disadvantaged" id="disadvantaged-yes" value="yes" tabindex="0">
                   <span class="label-text">Yes</span>
                 </label>
               </div>
-              <div class="field field-checkbox">
+              <div class="field field-radio">
                 <label>
-                  <input type="radio" name="disadvantaged" id="disadvantaged-no" value="no">
+                  <input type="radio" name="disadvantaged" id="disadvantaged-no" value="no" tabindex="1">
                   <span class="label-text">No</span>
                 </label>
               </div>

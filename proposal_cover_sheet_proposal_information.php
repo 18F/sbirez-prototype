@@ -13,7 +13,7 @@
     </header>
     <main role="main">
       <div class="wrap">
-        <form action="proposal_cover_sheet_proposal_information.php">
+        <form action="proposal_cover_sheet_project_team_information.php">
           <h1>Proposal information</h1>
           <div class="field field-text">
             <label>
@@ -21,20 +21,22 @@
               <input type="text" id="proposed-cost" />
             </label>
           </div>
-          <section class="fieldset fieldset-radio">
-            <h1>Does the proposed cost include discretionary technical assistance (<abbr title="discretionary technical assistance">DTA</abbr>?</h1>
-            <div class="field field-radio">
-              <label>
-                <input type="radio" name="dta" id="dta-yes" value="yes">
-                <span class="label-text">Yes</span>
-              </label>
-            </div>
-            <div class="field field-radio">
-              <label>
-                <input type="radio" name="dta" id="dta-no" value="no">
-                <span class="label-text">No</span>
-              </label>
-            </div>
+          <section class="fieldset">
+            <section class="fieldset fieldset-radio">
+              <h1>Does the proposed cost include discretionary technical assistance (<abbr title="discretionary technical assistance">DTA</abbr>?</h1>
+              <div class="field field-radio">
+                <label>
+                  <input type="radio" name="dta" id="dta-yes" value="yes">
+                  <span class="label-text">Yes</span>
+                </label>
+              </div>
+              <div class="field field-radio">
+                <label>
+                  <input type="radio" name="dta" id="dta-no" value="no">
+                  <span class="label-text">No</span>
+                </label>
+              </div>
+            </section>
             <section class="fieldset is-branch">
               <div class="field">
                 <span class="label-text">What is the proposed <abbr title="discretionary technical assistance">DTA</abbr> amount?</span>
@@ -42,20 +44,22 @@
               </div>
             </section>
           </section>
-          <section class="fieldset fieldset-radio">
-            <h1>Has a proposal for essentially equivalent work been submitted to other <abbr title="United States">U.S.</abbr> government agencies or <abbr title="Department of Defense">D.o.D.</abbr> component?</h1>
-            <div class="field field-radio">
-              <label>
-                <input type="radio" name="equivalent-work" id="equivalent-work-yes" value="yes">
-                <span class="label-text">Yes</span>
-              </label>
-            </div>
-            <div class="field field-radio">
-              <label>
-                <input type="radio" name="equivalent-work" id="equivalent-work-no" value="no">
-                <span class="label-text">No</span>
-              </label>
-            </div>
+          <section class="fieldset">
+            <section class="fieldset fieldset-radio">
+              <h1>Has a proposal for essentially equivalent work been submitted to other <abbr title="United States">U.S.</abbr> government agencies or <abbr title="Department of Defense">D.o.D.</abbr> component?</h1>
+              <div class="field field-radio">
+                <label>
+                  <input type="radio" name="equivalent-work" id="equivalent-work-yes" value="yes">
+                  <span class="label-text">Yes</span>
+                </label>
+              </div>
+              <div class="field field-radio">
+                <label>
+                  <input type="radio" name="equivalent-work" id="equivalent-work-no" value="no">
+                  <span class="label-text">No</span>
+                </label>
+              </div>
+            </section>
             <section class="fieldset is-branch">
               <h1>Equivalent work</h1>
               <div class="field field-text">
@@ -64,20 +68,22 @@
                   <input type="text" id="equivalent-work-agencies" name="equivalent-work-agencies">
                 </label>
               </div>
-              <section class="fieldset fieldset-radio">
-                <h1>Has a contract been awarded for any of the proposals listed above?</h1>
-                <div class="field field-radio">
-                  <label>
-                    <input type="radio" name="equivalent-work-award" id="equivalent-work-award-yes" value="yes"> 
-                    <span class="label-text">Yes</span>
-                  </label>
-                </div>
-                <div class="field field-radio">
-                  <label>
-                    <input type="radio" name="equivalent-work-award" id="equivalent-work-award-no" value="no"> 
-                    <span class="label-text">No</span>
-                  </label>
-                </div>
+              <section class="fieldset">
+                <section class="fieldset fieldset-radio">
+                  <h1>Has a contract been awarded for any of the proposals listed above?</h1>
+                  <div class="field field-radio">
+                    <label>
+                      <input type="radio" name="equivalent-work-award" id="equivalent-work-award-yes" value="yes"> 
+                      <span class="label-text">Yes</span>
+                    </label>
+                  </div>
+                  <div class="field field-radio">
+                    <label>
+                      <input type="radio" name="equivalent-work-award" id="equivalent-work-award-no" value="no"> 
+                      <span class="label-text">No</span>
+                    </label>
+                  </div>
+                </section>
                 <section class="fieldset is-branch">
                   <h1>Equivalent work award number</h1>
                   <div class="field field-text">
@@ -88,8 +94,8 @@
                   </div>
                 </section>
               </section>
-            </section><!-- fieldset#equivalent-work-branch -->
-          </section><!-- fieldset#equivalent-work -->
+            </section>
+          </section>
           <section class="fieldset fieldset-radio">
             <h1>Are you submitting assertions in accordance with DFARS 252.227-7017 "Identification and assertions use, release, or disclosure restriction"? See <a href="#">Section 11.5 of the solicitation</a>.</h1>
             <div class="field field-radio">
