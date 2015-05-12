@@ -5,7 +5,7 @@
     <? include "_includes/_header.php"; ?>
     <main class="h-feed">
       <div class="wrap">
-        <h1 class="p-name">151 Results for monopropellant thrusters</h1>
+        <h1 class="p-name">151 Results for <?= $query ?> </h1>
         <article id="AF151-06<? echo $i; ?>" class="topic h-entry is-favorite">
           <div class="topic-content">
             <h1 class="entry-title">Monopropellant Thrusters for Cubesats</h1>

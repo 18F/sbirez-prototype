@@ -1,9 +1,5 @@
 /* @override http://localhost:4000/stylesheets/styles.css */
 
-/* @override http://localhost:4000/stylesheets/styles.css */
-
-/* @override http://localhost:4000/stylesheets/styles.css */
-
 /* @group bootstrap */
 
 body{
@@ -50,6 +46,7 @@ label { display: block; }
 
 input[type=text],
 input[type=email],
+input[type=number],
 input[type=search],
 select,
 textarea{
@@ -174,7 +171,8 @@ section.fieldset div.field:last-of-type+section.fieldset{
 	border: none;
 }
 
-.fieldset.fieldset-equivalent-work-detail > h1{ display: none; }
+.fieldset.fieldset-equivalent-work-detail > h1,
+.fieldset.fieldset-phase-2 > h1{ display: none; }
 
 section.fieldset.fieldset-radio > h1,
 div.field span.label-text{
@@ -250,6 +248,11 @@ div.field.field-checkbox+.is-branch{
 .field-overhead,
 .field-fringe-benefits input{
 	width: 33%;
+}
+
+.field-year input,
+.field-number input{
+	width: 10%;
 }
 
 /* @end */
@@ -328,9 +331,6 @@ header.banner{
 	background: #00529e;
 	color: #fff;
 	line-height: 40px;
-	margin-bottom: 24px;
-	padding-top: 4px;
-	padding-bottom: 4px;
 	overflow: hidden;
 }
 
@@ -377,8 +377,8 @@ header.banner form div.field::after{
 header.banner form div.field input {
 	border-radius: 99em;
 	border: none;
-	line-height: 24px;
-	min-height: 24px;
+	line-height: 20px;
+	min-height: 20px;
 	padding-left: 20px;
 	width: 100%;
 	background: #032353;
@@ -405,6 +405,7 @@ main{ padding-bottom: 2em; }
 main div.wrap > h1 {
 	font-size: 36px;
 	font-family: 'franklin-gothic-urw-cond', sans-serif;
+	margin-top: 24px;
 	margin-bottom: 1em;
 	margin-left: -0.03em;
 }
@@ -574,17 +575,13 @@ nav.pagination a.pagination-next{
 
 /* @group header */
 
-header.banner+header.proposal-banner{
-	margin-top: -24px;
-	margin-bottom: 24px;
-}
 
-header.proposal-banner{
+
+header.proposal-banner,
+header.company-banner{
 	background: #eee;
-	line-height: 48px;
-	font-size: 24px;
+	line-height: 40px;
 	color: #333;
-	font-family: 'franklin-gothic-urw-cond', sans-serif;	
 }
 
 header.proposal-banner ol li{ 
@@ -661,7 +658,7 @@ body.proposal.proposal-progress-report aside span{
 	body.proposal.proposal-progress-report main.proposal-content div.wrap aside{ 
 		position: absolute;
 		right: 0;
-		top: 0;
+		top: 4px;
 		margin: 0;
 		width: 256px;
 		padding: 0;

@@ -1,3 +1,10 @@
+<?
+  $query = $_GET["query"];
+  if($query == null || $query == "") {
+    $query = "Monopropellant";
+  }
+?>
+
 <head>
   <script src="//use.typekit.net/pyi1vdj.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
