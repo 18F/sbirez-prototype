@@ -1,5 +1,9 @@
 /* @override http://localhost:4000/stylesheets/styles.css */
 
+/* @override http://localhost:4000/stylesheets/styles.css */
+
+/* @override http://localhost:4000/stylesheets/styles.css */
+
 /* @group bootstrap */
 
 body{
@@ -25,7 +29,7 @@ span.preposition{
 
 div.wrap{
 	width: 90%;
-	max-width: 1024px;
+	max-width: 800px;
 	margin: 0 auto;
 	position: relative;
 }
@@ -47,6 +51,7 @@ label { display: block; }
 input[type=text],
 input[type=email],
 input[type=number],
+input[type=password],
 input[type=search],
 select,
 textarea{
@@ -94,10 +99,10 @@ textarea{
 
 button {
 	background: none;
-	border: 2px solid;
+	border: 1px solid;
 	color: #008c52;
 	font: inherit;
-	padding: 12px 16px;
+	padding: 10px;
 	margin: 0;	
 	cursor: pointer;
 }
@@ -280,10 +285,10 @@ div.field.field-checkbox+.is-branch{
 .is-branch{
 }
 
-main form {
+main div.wrap > form {
 	border-right: 1px solid #eee;
-	padding-top: 8px;
 	padding-right: 16px;
+	padding-top: 16px;
 	max-width: 640px;
 }
 
@@ -351,9 +356,19 @@ header.banner div.field label {
 }
 
 header.banner nav{ font-size: 14px; }
-header.banner nav a{ margin-right: 1em; }
+header.banner nav a{ 
+	float: left;
+	padding: 0 0.8em;
+}
 header.banner nav a:hover{ color: #a3d3ff; }
 
+body.my-topics header.banner nav a.my-topics,
+body.notifications header.banner nav a.notifications,
+body.my-company header.banner nav a.my-company {
+	color: #fefefe;
+	background: #002152;
+	text-decoration: none;
+}
 header.banner form span.label-text,
 header.banner form button{ position: absolute; left: -9999em; }
 
@@ -392,7 +407,7 @@ header.banner form div.field input:active {
 	header.banner div.wrap{ padding-right: 386px; }
 	header.banner nav{
 		position: absolute;
-		right: 0;
+		right: -0.8em;
 		top: 0;
 		width: auto;
 	}	
@@ -452,6 +467,8 @@ article.topic h2{
 article.topic form{
 	display: inline-block;
 	vertical-align: middle;
+	padding: 0;
+	border: none;
 }
 
 article.topic nav{
@@ -581,7 +598,8 @@ header.proposal-banner,
 header.company-banner{
 	background: #eee;
 	line-height: 40px;
-	color: #333;
+	color: #555;
+	margin-bottom: 24px;
 }
 
 header.proposal-banner ol li{ 
@@ -651,7 +669,7 @@ body.proposal.proposal-progress-report aside span{
 
 @media screen and (min-width: 711.11px) {
 	body.proposal.proposal-progress-report main.proposal-content div.wrap{ 
-		padding-right: 272px;
+		padding-right: 304px;
 		position: relative;
 	}
 
@@ -715,7 +733,7 @@ div.wrap > section ol li::before{
 }
 
 footer.proposal-footer div.wrap{
-	border-top: 3px solid #f3f3f3;
+	border-top: 3px solid #e3e3e3;
 	padding-top: 1em;
 }
 
@@ -758,5 +776,19 @@ footer.proposal-footer div.wrap{
 	border-color: #7e2000;
 }
 
+
+/* @end */
+
+/* @group sign-in */
+body.sign-in {
+	background: #fafafa;
+}
+body.sign-in main form {
+	padding: 16px;
+	max-width: 320px;
+	margin: 1em auto;
+	border: 3px solid #e3e3e3;
+	background: white;
+}
 
 /* @end */

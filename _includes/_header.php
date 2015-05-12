@@ -13,10 +13,10 @@
       </footer>
     </form>
     <nav class="primary">
-      <a href="search_results_page.php">My Topics</a>
-      <a href="#">Notifications</a>
-      <a href="company_background.php">My Company</a>
-      <a href="sign_in.php">Sign Out</a>
+      <a class="my-topics" href="my_topics.php">My Topics</a>
+      <a class="notifications" href="notifications.php">Notifications</a>
+      <a class="my-company" href="company_background.php">My Company</a>
+      <a class="sign-out" href="sign_in.php">Sign Out</a>
     </nav>
   </div>
 </header>
