@@ -15,7 +15,7 @@
             </div>
             <nav>
               <a href="#">View details</a>
-              <form action="proposal_progress_report.php"><button>Start a proposal</button></form>
+              <form action="proposal_overview.php"><button>Start a proposal</button></form>
               <form><button class="button-remove">Remove from my topics</button></form>
             </nav>
           </article>

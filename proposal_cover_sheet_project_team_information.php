@@ -6,7 +6,7 @@
     <header class="proposal-banner">
       <div class="wrap">
         <ol class="breadcrumbs">
-          <li><a href="proposal_progress_report.php">Proposal</a></li>
+          <li><a href="proposal_overview.php">Proposal</a></li>
           <li>Cover Sheet</li>
         </ol>
       </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <? include "_includes/_head.php"; ?>
-  <body class="proposal proposal-progress-report">
+  <body class="proposal proposal-overview">
     <? include "_includes/_header.php"; ?>
     <header class="proposal-banner">
       <div class="wrap">
@@ -11,28 +11,27 @@
     <main role="main" class="proposal-content">
       <div class="wrap">
         <section>
-          <h1>Progress report</h1>      
-          <p>SBIR proposals are comprised of four parts, listed below. We&rsquo;ll help you submit your proposal by filling out the necessary paperwork, one step at a time.</p>
+          <h1 class="primary-header">Overview</h1>      
+          <p>Proposals are comprised of several parts, listed below. We&rsquo;ll help you submit your proposal by filling out the necessary paperwork, one step at a time.</p>
           <ol>
-            <li>
-              Cover sheet
+            <li class="cover-sheet">
+              <span>Cover sheet</span>
               <ol>
-                <li><a href="proposal_cover_sheet_proposal_information.php">Proposal information</a></li>
-                <li><a href="proposal_cover_sheet_project_team_information.php">Project team information</a></li>
-                <li><a href="proposal_cover_sheet_principal_investigator_information.php">Principal investigator information</a></li>
+                <li class="is-complete"><a href="proposal_cover_sheet_proposal_information.php">Proposal information</a></li>
+                <li class="is-incomplete is-error"><a href="proposal_cover_sheet_project_team_information.php">Project team information</a></li>
+                <li class="is-incomplete"><a href="proposal_cover_sheet_principal_investigator_information.php">Principal investigator information</a></li>
               </ol>
             </li>
-            <li><a href="proposal_technical_volume.php">Technical volume</a></li>
-            <li><a href="proposal_cost_volume.php">Cost volume</a></li>
-            <li><a href="proposal_company_commercialization_report.php">Company commercialization report</a></li>
+            <li class="is-incomplete"><a href="proposal_technical_volume.php">Technical volume</a></li>
+            <li class="is-incomplete"><a href="proposal_cost_volume.php">Cost volume</a></li>
+            <li class="is-incomplete"><a href="proposal_company_commercialization_report.php">Company commercialization report</a></li>
           </ol>
           <form action="proposal_cover_sheet_proposal_information.php">
             <button>Get started</button>
-            <button>Verify this proposal</button>
           </form>
         </section>
         <aside>
-          <h1>Technical point <span class="preposition">of</span> contact</h1>
+          <h1><span class="technical-point">Technical point</span> <span class="preposition">of</span> contact</h1>
           <img src="http://placekitten.com/g/256/256">
           <span>Dr. Soandso McSmartpants</span>
           <span>1-888-222-2222</span>
@@ -45,6 +44,7 @@
     </main>
     <footer class="proposal-footer">
       <div class="wrap">
+        <h1>Related solicitation</h1>
         <article id="AF151-061" class="topic h-entry">
           <div class="topic-content">
             <h1 class="entry-title">Monopropellant Thrusters for Cubesats</h1>
@@ -58,6 +58,9 @@
             </form>
           </nav>
         </article>
+        <form action="proposal_cover_sheet_proposal_information.php">
+          <button class="button-remove">Delete this proposal</button>
+        </form>
       </div>
     </footer>
     <? include "_includes/_footer.php"; ?>

@@ -6,10 +6,10 @@
     <main class="topic">
       <div class="wrap">
         <header>
-          <h1>Waveform Agile, Low-cost Multi-function Radio Frequency ISR in Contested Environment</h1>
+          <h1 class="primary-header">Waveform Agile, Low-cost Multi-function Radio Frequency ISR in Contested Environment</h1>
           <h2>SBIR AF151-145</h2>
           <nav>
-            <form action="proposal_progress_report.php"><button>Start a proposal</button></form>
+            <form action="proposal_overview.php"><button>Start a proposal</button></form>
             <form><button class="button-remove">Remove from my topics</button></form>
           </nav>
         </header>

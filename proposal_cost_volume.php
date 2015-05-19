@@ -6,14 +6,14 @@
     <header class="proposal-banner">
       <div class="wrap">
         <ol class="breadcrumbs">
-          <li><a href="proposal_progress_report.php">Proposal</a></li>
+          <li><a href="proposal_overview.php">Proposal</a></li>
           <li>Cost volume</li>
         </ol>
       </div>
     </header>
     <main role="main">
       <div class="wrap">
-        <form action="proposal_progress_report.php">
+        <form action="proposal_overview.php">
           <div class="field">
             <label>
               <span class="label-text">Where will you perform your work?</span>

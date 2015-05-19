@@ -5,7 +5,7 @@
     <? include "_includes/_header.php"; ?>
     <main class="h-feed">
       <div class="wrap">
-        <h1 class="p-name">151 Results for <span class="query"><?= $query ?></span> </h1>
+        <h1 class="p-name primary-header">151 Results for <span class="query"><?= $query ?></span> </h1>
         <article id="AF151-06<? echo $i; ?>" class="topic h-entry is-favorite">
             <a href="topic.php" class="topic-content">
             <h1 class="entry-title">Monopropellant Thrusters for Cubesats</h1>
@@ -13,8 +13,8 @@
             <p class="entry-summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
           </a>
           <nav>
-            <a href="#">View details</a>
-            <form action="proposal_progress_report.php"><button>Start a proposal</button></form>
+            <a href="topic.php">View details</a>
+            <form action="proposal_overview.php"><button>Start a proposal</button></form>
             <form><button class="button-remove">Remove from my topics</button></form>
           </nav>
         </article>
@@ -26,7 +26,7 @@
               <p class="entry-summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             </a>
             <nav>
-              <a href="#">View details</a>
+              <a href="topic.php">View details</a>
               <form>
                 <button>Add to my topics</button>
               </form>

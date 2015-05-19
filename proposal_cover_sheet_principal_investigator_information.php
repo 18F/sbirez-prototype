@@ -6,14 +6,14 @@
     <header class="proposal-banner">
       <div class="wrap">
         <ol class="breadcrumbs">
-          <li><a href="proposal_progress_report.php">Proposal</a></li>
+          <li><a href="proposal_overview.php">Proposal</a></li>
           <li>Cover Sheet</li>
         </ol>
       </div>
     </header>
     <main role="main">
       <div class="wrap">
-        <form action="proposal_progress_report.php">
+        <form action="proposal_overview.php">
           <h1>Principal Investigator (PI) / Corporate Official (CO) Information</h1>
           <section class="fieldset fieldset-principal-investigator">
             <h1>Principal investigator</h1>

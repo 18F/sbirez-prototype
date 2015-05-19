@@ -3,17 +3,30 @@
   <? include "_includes/_head.php"; ?>
   <body class="proposal proposal-cover-sheet proposal-cover-sheet-proposal-information">
     <? include "_includes/_header.php"; ?>
-    <header class="proposal-banner">
-      <div class="wrap">
-        <ol class="breadcrumbs">
-          <li><a href="proposal_progress_report.php">Proposal</a></li>
-          <li>Cover Sheet</li>
-        </ol>
-      </div>
-    </header>
     <main role="main">
       <div class="wrap">
+        <nav class="table-of-contents">
+          <h1>Table <span class="preposition">of</span> contents</h1>
+          <ol>
+            <li class="cover-sheet">
+              <span>Cover sheet</span>
+              <ol>
+                <li><a href="proposal_cover_sheet_proposal_information.php">Proposal information</a></li>
+                <li class="is-incomplete is-error"><a href="proposal_cover_sheet_project_team_information.php">Project team information</a></li>
+                <li class="is-incomplete"><a href="proposal_cover_sheet_principal_investigator_information.php">Principal investigator information</a></li>
+              </ol>
+            </li>
+            <li class="is-incomplete"><a href="proposal_technical_volume.php">Technical volume</a></li>
+            <li class="is-incomplete"><a href="proposal_cost_volume.php">Cost volume</a></li>
+            <li class="is-incomplete"><a href="proposal_company_commercialization_report.php">Company commercialization report</a></li>
+          </ol>
+          <div class="previous-next">
+            <a class="button button-previous is-disabled" href="#">Previous</a>
+            <a class="button button-next" href="#">Next</a>            
+          </div>
+        </nav>
         <form action="proposal_cover_sheet_project_team_information.php">
+          <a class="a-return" href="proposal_overview.php">&larr; Return to overview</a>
           <h1>Proposal information</h1>
           <div class="field field-text">
             <label>
@@ -23,7 +36,7 @@
           </div>
           <section class="fieldset fieldset-discretionary-technical-assistance">
             <section class="fieldset fieldset-radio">
-              <h1>Does the proposed cost include discretionary technical assistance (<abbr title="discretionary technical assistance">DTA</abbr>?</h1>
+              <h1>Does the proposed cost include discretionary technical assistance (<abbr title="discretionary technical assistance">DTA</abbr>)?</h1>
               <div class="field field-radio">
                 <label>
                   <input type="radio" name="dta" id="dta-yes" value="yes">
@@ -139,8 +152,6 @@
           </div>
           <footer>
             <button>Save and continue</button>
-            <a href="proposal_progress_report.php">Cancel</a>
-            <p>You can also <button>Save and return to the proposal progress report</button></p>
           </footer>
         </form>
       </div>
