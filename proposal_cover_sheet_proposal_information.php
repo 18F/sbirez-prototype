@@ -3,36 +3,36 @@
   <? include "_includes/_head.php"; ?>
   <body class="proposal proposal-cover-sheet proposal-cover-sheet-proposal-information">
     <? include "_includes/_header.php"; ?>
+    <header class="proposal-banner">
+      <div class="wrap">
+        <h1>
+          <a href="proposal_overview.php">
+            Proposal for <span class="topic">Solar Electric Propulsion for Agile Space Capabilities</span>
+          </a>
+        </h1>
+      </div>
+    </header>
     <main role="main">
       <div class="wrap">
-        <nav class="table-of-contents">
-          <h1>Table <span class="preposition">of</span> contents</h1>
-          <ol>
-            <li class="cover-sheet">
-              <span>Cover sheet</span>
-              <ol>
-                <li><a href="proposal_cover_sheet_proposal_information.php">Proposal information</a></li>
-                <li class="is-incomplete is-error"><a href="proposal_cover_sheet_project_team_information.php">Project team information</a></li>
-                <li class="is-incomplete"><a href="proposal_cover_sheet_principal_investigator_information.php">Principal investigator information</a></li>
-              </ol>
-            </li>
-            <li class="is-incomplete"><a href="proposal_technical_volume.php">Technical volume</a></li>
-            <li class="is-incomplete"><a href="proposal_cost_volume.php">Cost volume</a></li>
-            <li class="is-incomplete"><a href="proposal_company_commercialization_report.php">Company commercialization report</a></li>
-          </ol>
-          <div class="previous-next">
-            <a class="button button-previous is-disabled" href="#">Previous</a>
-            <a class="button button-next" href="#">Next</a>            
-          </div>
-        </nav>
         <form action="proposal_cover_sheet_project_team_information.php">
-          <a class="a-return" href="proposal_overview.php">&larr; Return to overview</a>
+          <? include "_includes/_form_nav.php" ?>
           <h1>Proposal information</h1>
-          <div class="field field-text">
+          <summary class="error-message">
+            <h1>We&rsquo;ve detected 3 errors on this page. This is updated in realtime.</h1> 
+            <details>
+              <ol>
+                <li>You must answer the question &ldquo;Proposed cost&rdquo;</li>
+                <li>You must answer the question &ldquo;Are you proposing research&hellip;&rdquo;</li>
+                <li>You must answer the question &ldquo;Anticipated Benefits/Potential&hellip;&rdquo;</li>
+              </ol>
+            </details>
+          </summary>
+          <div class="field field-text is-error field-proposed-cost">
             <label>
               <span class="label-text">Proposed cost</span>
               <input type="text" id="proposed-cost" />
             </label>
+            <span class="error-message">Proposed cost must be non-zero.</span>
           </div>
           <section class="fieldset fieldset-discretionary-technical-assistance">
             <section class="fieldset fieldset-radio">
@@ -51,7 +51,7 @@
               </div>
             </section>
             <aside class="is-branch">
-              <div class="field">
+              <div class="field field-proposed-dta-amount">
                 <span class="label-text">What is the proposed <abbr title="discretionary technical assistance">DTA</abbr> amount?</span>
                 <input type="text" id="dta-amount" name="dta-amount" />
               </div>
@@ -98,7 +98,7 @@
                   </div>
                 </section>
                 <aside class="is-branch">
-                  <div class="field field-text">
+                  <div class="field field-text field-contract-number">
                     <label>
                       <span class="label-text">Please provide the contract number:</span>
                       <input type="text" name="equivalent-work-award-number" id="equivalent-work-award-number" value=""> 
@@ -123,7 +123,7 @@
               </label>
             </div>
           </section>
-          <section class="fieldset fieldset-radio">
+          <section class="fieldset fieldset-radio is-error">
             <h1>Are you proposing research that utilizes human/animal subjects or recombinant DNA as described in section [3.11], [3.12], and [3.13] of the solicitation?</h1>
             <div class="field field-radio">
               <label>
@@ -137,6 +137,7 @@
                 <span class="label-text">No</span>
               </label>
             </div>
+            <span class="error-message">You must answer this question.</span>
           </section>
           <div class="field field-textarea">
             <label>
@@ -144,11 +145,12 @@
               <textarea id="technical-abstract" name="technical-abstract"></textarea>
             </label>
           </div>
-          <div class="field field-textarea">
+          <div class="field field-textarea is-error">
             <label>
               <span class="label-text">Anticipated Benefits/Potential Commercial Applications of the Research or Development. (No classified or proprietary information)</span>
               <textarea id="anticipated-benefits" name="anticipated-benefits"></textarea>
             </label>
+            <span class="error-message">You must answer this question.</span>
           </div>
           <footer>
             <button>Save and continue</button>

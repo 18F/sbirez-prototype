@@ -5,15 +5,18 @@
     <? include "_includes/_header.php"; ?>
     <header class="proposal-banner">
       <div class="wrap">
-        <ol class="breadcrumbs">
-          <li><a href="proposal_overview.php">Proposal</a></li>
-          <li>Technical volume</li>
-        </ol>
+        <h1>
+          <a href="proposal_overview.php">
+            Proposal for <span class="topic">Solar Electric Propulsion for Agile Space Capabilities</span>
+          </a>
+        </h1>
       </div>
     </header>
     <main role="main">
       <div class="wrap">
-        <form action="proposal_overview.php">
+        <form action="proposal_cost_volume.php">
+          <? include "_includes/_form_nav.php" ?>
+          <h1>Technical volume</h1>
           <section class="fieldset fieldset-radio">
             <h1>Have you reviewed all the requirements in the Air Force and DoD Solicitation instructions?</h1>
             <div class="field field-radio">
@@ -93,13 +96,13 @@
             <h1>Does the document contain a header with the company name, topic number, and proposal number? This header can exist in the margin.</h1>
             <div class="field field-radio">
               <label>
-                <input type="radio" name="formatting" id="formatting-yes" value="yes">
+                <input type="radio" name="header" id="header-yes" value="yes">
                 <span class="label-text">Yes</span>
               </label>
             </div>
             <div class="field field-radio">
               <label>
-                <input type="radio" name="formatting" id="formatting-no" value="no">
+                <input type="radio" name="header" id="header-no" value="no">
                 <span class="label-text">No</span>
               </label>
             </div>
@@ -110,10 +113,8 @@
               <input type="file">
             </label>
           </div>
-
           <footer>
-            <button>Save and return</button>
-            <a href="#">Cancel</a>
+            <button>Save and continue</button>
           </footer>
         </form>
       </div>

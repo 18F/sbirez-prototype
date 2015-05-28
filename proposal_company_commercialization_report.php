@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
   <? include "_includes/_head.php"; ?>
-  <body class="proposal proposal-technical-volume">
+  <body class="proposal proposal-company-commercialization-report">
     <? include "_includes/_header.php"; ?>
     <header class="proposal-banner">
       <div class="wrap">
-        <ol class="breadcrumbs">
-          <li><a href="proposal_overview.php">Proposal</a></li>
-          <li>Company commercialization report</li>
-        </ol>
+        <h1>
+          <a href="proposal_overview.php">
+            Proposal for <span class="topic">Solar Electric Propulsion for Agile Space Capabilities</span>
+          </a>
+        </h1>
       </div>
     </header>
     <main role="main">
       <div class="wrap">
         <form action="proposal_overview.php">
+          <? include "_includes/_form_nav.php" ?>
+          <h1>Company commercialization report</h1>
           <section class="fieldset">
             <h1>Contact information</h1>
             <div class="field field-select field-honorific">
@@ -66,10 +69,8 @@
               <textarea id="track-record" name="track-record"></textarea>
             </label>
           </div>
-
           <footer>
-            <button>Save and return</button>
-            <a href="#">Cancel</a>
+            <button>Save and continue</button>
           </footer>
         </form>
       </div>

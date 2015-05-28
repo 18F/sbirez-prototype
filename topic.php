@@ -10,7 +10,6 @@
           <h2>SBIR AF151-145</h2>
           <nav>
             <form action="proposal_overview.php"><button>Start a proposal</button></form>
-            <form><button class="button-remove">Remove from my topics</button></form>
           </nav>
         </header>
         <section class="topic-objective">

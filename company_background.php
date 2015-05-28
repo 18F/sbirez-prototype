@@ -25,7 +25,7 @@
               <input type="text">
             </label>
           </div>
-          <div class="field">
+          <div class="field field-num-phase-2-awards">
             <label>
               <span class="label-text">How many Phase 2 awards (SBIR and STTR) has your firm received from the Federal Government (including DoD)?</span>
               <input type="text">
@@ -91,7 +91,6 @@
           </div>
           <footer>
             <button>Save and return</button>
-            <a href="#">Cancel</a>
           </footer>
         </form>
       </div>

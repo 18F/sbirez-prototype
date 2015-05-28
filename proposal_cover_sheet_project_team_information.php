@@ -5,15 +5,17 @@
     <? include "_includes/_header.php"; ?>
     <header class="proposal-banner">
       <div class="wrap">
-        <ol class="breadcrumbs">
-          <li><a href="proposal_overview.php">Proposal</a></li>
-          <li>Cover Sheet</li>
-        </ol>
+        <h1>
+          <a href="proposal_overview.php">
+            Proposal for <span class="topic">Solar Electric Propulsion for Agile Space Capabilities</span>
+          </a>
+        </h1>
       </div>
     </header>
     <main role="main">
       <div class="wrap">
         <form action="proposal_cover_sheet_principal_investigator_information.php">
+          <? include "_includes/_form_nav.php" ?>
           <h1>Project team information</h1>
           <section class="fieldset fieldset-radio">
             <h1>Are teaming partners or subcontractors proposed?</h1>
@@ -39,13 +41,13 @@
               </label>
             </div>
             <section class="fieldset is-branch">
-              <div class="field">
+              <div class="field field-collaborator-name">
                 <label>
                   <span class="label-text">Which one?</span>
                   <input type="text">
                 </label>
               </div>
-              <div class="field">
+              <div class="field field-collaborator-point-of-contact">
                 <label>
                   <span class="label-text">Who&rsquo;s your point of contact there?</span>
                   <input type="text">
@@ -112,8 +114,6 @@
           </section>
           <footer>
             <button>Save and continue</button>
-            <a href="#">Cancel</a>
-            <p>You can also <button>Save and return to the proposal progress report</button></p>
           </footer>
         </form>
       </div>

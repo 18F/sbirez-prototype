@@ -14,11 +14,10 @@
           </a>
           <nav>
             <a href="topic.php">View details</a>
-            <form action="proposal_overview.php"><button>Start a proposal</button></form>
-            <form><button class="button-remove">Remove from my topics</button></form>
+            <form action="proposal_overview.php"><button>Continue proposal</button></form>
           </nav>
         </article>
-        <? for ($i=0; $i < 6; $i++): ?>
+        <? for ($i = 0; $i < 6; $i++): ?>
           <article id="AF151-06<? echo $i; ?>" class="topic h-entry">
             <a href="topic.php" class="topic-content">
               <h1 class="entry-title">Monopropellant Thrusters for Cubesats</h1>
@@ -27,20 +26,11 @@
             </a>
             <nav>
               <a href="topic.php">View details</a>
-              <form>
-                <button>Add to my topics</button>
-              </form>
+              <form action="proposal_overview.php"><button>Create proposal</button></form>
             </nav>
           </article>
         <? endfor; ?>
-        <nav class="pagination">
-          <a class="pagination-prev" href="#">Previous</a>
-          <a class="pagination-next" href="#">Next</a>
-          <span class="showing-results">Showing results</span>
-          <span class="pagination-current-range">1-10</span>
-          <span class="preposition">of</span>
-          <span class="pagination-total">151</span>
-        </nav>        
+        <? include "_includes/_pagination.php" ?>
       </div>
     </main>
     <? include "_includes/_footer.php"; ?>

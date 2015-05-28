@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
   <? include "_includes/_head.php"; ?>
-  <body class="proposal proposal-cover-sheet proposal-cover-sheet-project-team-information">
+  <body class="proposal proposal-cover-sheet proposal-cover-sheet-principal-investigator-information">
     <? include "_includes/_header.php"; ?>
     <header class="proposal-banner">
       <div class="wrap">
-        <ol class="breadcrumbs">
-          <li><a href="proposal_overview.php">Proposal</a></li>
-          <li>Cover Sheet</li>
-        </ol>
+        <h1>
+          <a href="proposal_overview.php">
+            Proposal for <span class="topic">Solar Electric Propulsion for Agile Space Capabilities</span>
+          </a>
+        </h1>
       </div>
     </header>
     <main role="main">
       <div class="wrap">
-        <form action="proposal_overview.php">
+        <form action="proposal_technical_volume.php">
+          <? include "_includes/_form_nav.php" ?>
           <h1>Principal Investigator (PI) / Corporate Official (CO) Information</h1>
           <section class="fieldset fieldset-principal-investigator">
             <h1>Principal investigator</h1>
@@ -126,8 +128,7 @@
             </div>
           </section>
           <footer>
-            <button>Save and return</button>
-            <a href="#">Cancel</a>
+            <button>Save and continue</button>
           </footer>
         </form>
       </div>

@@ -5,15 +5,18 @@
     <? include "_includes/_header.php"; ?>
     <header class="proposal-banner">
       <div class="wrap">
-        <ol class="breadcrumbs">
-          <li><a href="proposal_overview.php">Proposal</a></li>
-          <li>Cost volume</li>
-        </ol>
+        <h1>
+          <a href="proposal_overview.php">
+            Proposal for <span class="topic">Solar Electric Propulsion for Agile Space Capabilities</span>
+          </a>
+        </h1>
       </div>
     </header>
     <main role="main">
       <div class="wrap">
-        <form action="proposal_overview.php">
+        <form action="proposal_company_commercialization_report.php">
+          <? include "_includes/_form_nav.php" ?>
+          <h1>Cost volume</h1>
           <div class="field">
             <label>
               <span class="label-text">Where will you perform your work?</span>
@@ -79,6 +82,24 @@
                 </label>
               </div>              
             </section>
+            <section class="fieldset fieldset-direct-material-cost" id="direct-material-2">
+              <header>
+                <h1>Direct material 2</h1>
+                <a href="#" class="remove">Remove</a>
+              </header>
+              <div class="field field-name">
+                <label>
+                  <span class="label-text">Name</span>
+                  <input type="text" name="direct-material-1-cost-name" id="direct-material-1-cost-name" value="">
+                </label>
+              </div>
+              <div class="field field-overhead">
+                <label>
+                  <span class="label-text">Overhead</span>
+                  <input type="text" name="overhead" id="direct-material-1-phase-1-cost" value="">
+                </label>
+              </div>              
+            </section>
             <div class="field field-overhead">
               <label>
                 <span class="label-text">Overhead</span>
@@ -88,8 +109,7 @@
           </section>
 
           <footer>
-            <button>Save and return</button>
-            <a href="#">Cancel</a>
+            <button>Save and continue</button>
           </footer>
         </form>
       </div>
