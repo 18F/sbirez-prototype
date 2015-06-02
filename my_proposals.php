@@ -5,7 +5,7 @@
     <? include "_includes/_header.php"; ?>
     <main class="h-feed">
       <div class="wrap">
-        <h1 class="primary-header">My topics</h1>
+        <h1 class="primary-header">My proposals</h1>
         <? for ($i=0; $i < 6; $i++): ?>
           <article id="AF151-06<? echo $i; ?>" class="topic h-entry is-favorite">
             <div class="topic-content">

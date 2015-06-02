@@ -18,14 +18,12 @@
           <? include "_includes/_form_nav.php" ?>
           <h1>Proposal information</h1>
           <summary class="error-message">
-            <h1>We&rsquo;ve detected 3 errors on this page. This is updated in realtime.</h1> 
-            <details>
-              <ol>
-                <li>You must answer the question &ldquo;Proposed cost&rdquo;</li>
-                <li>You must answer the question &ldquo;Are you proposing research&hellip;&rdquo;</li>
-                <li>You must answer the question &ldquo;Anticipated Benefits/Potential&hellip;&rdquo;</li>
-              </ol>
-            </details>
+            <h1>We&rsquo;ve detected 3 errors on this page.</h1> 
+            <ol>
+              <li>You must answer the question &ldquo;Proposed cost&rdquo;</li>
+              <li>You must answer the question &ldquo;Are you proposing research&hellip;&rdquo;</li>
+              <li>You must answer the question &ldquo;Anticipated Benefits/Potential&hellip;&rdquo;</li>
+            </ol>
           </summary>
           <div class="field field-text is-error field-proposed-cost">
             <label>
