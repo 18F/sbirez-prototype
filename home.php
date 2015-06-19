@@ -8,7 +8,7 @@
         <h1 class="primary-header">Let&rsquo;s work together</h1>
         <p>The Small Business Innovation Research (SBIR) and Small Business Technology Transfer (STTR) programs encourage domestic small businesses to engage in Federal Research/Research and Development with the potential for commercialization. This site contains the list of Air Force topics.</p>
         <p>Find projects that dovetail with your work:</p>
-        <form action="search.php" class="ng-pristine ng-valid">
+        <form action="topics.php" class="ng-pristine ng-valid">
           <div class="field">
             <label>
               <span class="label-text">Query</span>

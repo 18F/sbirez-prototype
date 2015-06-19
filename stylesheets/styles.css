@@ -6,13 +6,12 @@
 
 /* @group bootstrap */
 
-main{ padding-bottom: 2em; }
+
 
 body{
 	font-family: helvetica neue, helvetica, sans-serif;
 	font-size: 16px;
 	color: #333;
-	padding-bottom: 2em;
 }
 
 a{ color: #0064be; }
@@ -47,7 +46,6 @@ a.a-return:hover::before{ color: #444; background: #eee;}
 
 
 @media screen and (min-width: 768.88px) {
-	a.a-return{ padding-top: 0; }
 }
 
 p, li, dd, dt {
@@ -102,7 +100,12 @@ h1.primary-header {
 	margin-left: -0.03em;
 }
 
-@media screen and (min-width: 711.11px) { h1.primary-header{ font-size: 40px; } }
+@media screen and (min-width: 711.11px) { 
+	h1.primary-header{ 
+		font-size: 40px; 
+		margin-bottom: 0.4em;
+	} 
+}
 
 main ol{ 
 	margin-bottom: 2em;
@@ -157,7 +160,7 @@ textarea{
 	border-radius: 3px;
 	line-height: 36px;
 	min-height: 36px;
-	min-width: 10em;
+	min-width: 4em;
 	width: 100%;
 	margin: 0;
 	font: inherit;
@@ -210,6 +213,8 @@ button,
 	cursor: pointer;
 	text-decoration: none;
 	border-radius: 3px;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 button:hover {
@@ -257,6 +262,8 @@ form a.a-return + h1{
 div.field,
 section.fieldset,
 section.fieldset.fieldset-radio{ margin-bottom: 24px; }
+
+div.field+section.fieldset{ margin-top: 32px; }
 
 section.fieldset{
 	border: 1px solid #cfcfcf;
@@ -392,6 +399,38 @@ section.fieldset.fieldset-radio.is-error span.error-message{
 	font-style: italic;	
 }
 
+section.fieldset.fieldset-address div.field-city-state-zip::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+section.fieldset.fieldset-address div.field-city-state-zip{
+	margin-right: -0.67em;
+	margin-bottom: 0;
+}
+
+section.fieldset.fieldset-address div.field.field-city,
+section.fieldset.fieldset-address div.field.field-state,
+section.fieldset.fieldset-address div.field.field-zip{
+	float: left;
+	width: 25%;
+	padding-right: 0.67em; 
+}
+
+section.fieldset.fieldset-address div.field.field-city{ 
+	width: 50%; 
+}
+
+
+section.fieldset.fieldset-address div.field.field-city input,
+section.fieldset.fieldset-address div.field.field-state input,
+section.fieldset.fieldset-address div.field.field-zip input{
+	min-width: 0;
+}
+
+
+
 /* @group widths */
 
 .field-collaborator-name input,
@@ -399,11 +438,14 @@ section.fieldset.fieldset-radio.is-error span.error-message{
 	width: 75%;	
 }
 
-.field-name,
-.field-title,
-.field-email,
-.field-category{
+.field-name input,
+.field-title input,
+.field-category input,
+.field-federal-tax-id input,
+.field-duns-number input,
+.field-cage-code input{
 	width: 50%;
+  min-width: 10em;
 }
 
 .field-phone input,
@@ -420,6 +462,14 @@ section.fieldset.fieldset-radio.is-error span.error-message{
 .field-num-phase-2-awards input{
 	width: 33%;
 }
+
+.field-phone-number input,
+.field-fax-number input{
+	width: 10em;
+}
+
+
+.field-number-short input{ width: 2em; }
 
 /* @end */
 
@@ -445,14 +495,21 @@ section.fieldset.fieldset-radio.is-error span.error-message{
 main div.wrap > form {
 	padding-top: 12px;
 	max-width: 576px;
+	padding-bottom: 24px;
 }
 
 @media screen and (min-width: 640px) {
-	main div.wrap > form {
+   body.company main div.wrap > form,
+	body.proposal main div.wrap > form {
 		padding-right: 16px;
 		border-right: 1px solid #eee;
-		margin-right: 224px;
 	}
+	
+   body.proposal main div.wrap > form {
+		margin-right: 224px;
+   }
+	
+	
 }
 
 
@@ -579,8 +636,11 @@ header.banner form div.field input {
 	min-height: 20px;
 	padding-left: 20px;
 	width: 100%;
+   font-size: 14px;
 	background: #032353;
 	color: #fff;
+	position: relative;
+	top: -1px;
 }
 
 
@@ -622,10 +682,9 @@ header.banner form div.field input {
 }
 
 
-@media screen and (min-width: 768.88px) {
+@media screen and (min-width: 711.11px) {
 
 	header.banner{
-		margin-bottom: 16px;
 		line-height: 32px;
 	}
 	
@@ -937,15 +996,18 @@ body.home main form button:hover{
 	background: none;
 }
 
-body.home main h1{
-	font-size: 48px;
-	margin-bottom: 0.4em;
+@media screen and (min-width: 768.88px) {
+	body.home main h1{
+		font-size: 48px;
+		margin-bottom: 0.4em;
+	}
+	
+	body.home main p{ 
+		font-size: 20px; 
+		max-width: 32em;
+	}
 }
 
-body.home main p{ 
-	font-size: 20px; 
-	max-width: 32em;
-}
 body.home main p:first-of-type{ margin-bottom: 1.4em; }
 body.home main form{ border: none; }
 
@@ -1028,8 +1090,10 @@ section.fieldset-direct-material-costs section.fieldset-direct-material-cost a.r
 header.proposal-banner,
 header.company-banner{
 	background: #eee;
-	line-height: 40px;
+	line-height: 24px;
 	color: #555;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }
 
 header.proposal-banner a{color: #555; } 
@@ -1095,6 +1159,7 @@ body.proposal.proposal-overview aside div.hcard{
 footer.proposal-footer div.wrap{
 	border-top: 3px solid #e3e3e3;
 	padding-top: 1em;
+	margin-top: 1em;
 }
 
 
@@ -1153,9 +1218,12 @@ body.topics-no-results main div.wrap h1{ margin-top: 0; }
 
 /* @end */
 
-/* @group body.topics */
+/* @group body.topics, body.proposals */
 
-
+body.proposals h1.primary-header,
+body.topics	h1.primary-header{
+	margin-bottom: 0.8em; 
+}
 
 /* @end */
 
@@ -1394,5 +1462,52 @@ body.topic main section p{ margin-bottom: 1em; }
 
 /* @end */
 
+
+/* @end */
+
+/* @group bigfoot */
+
+body .bigfoot-footnote__button {
+  padding: 0;
+  border-radius: 99em;
+  margin: 0 0 0 0.4em;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 19px;
+  border: 1px solid #ccc;
+  color: #555;
+  background: #eee;
+  transition: none;
+}
+
+body .bigfoot-footnote__button:hover,
+body .bigfoot-footnote__button:focus{
+	background: #ddd;
+	color: #333;
+}
+
+body .bigfoot-footnote__button:active {
+  background: #ccc;
+  color: #111;
+}
+body .bigfoot-footnote__button svg{
+	display: none;
+}
+body .bigfoot-footnote__button:before{
+	content: "?";
+}
+
+body .bigfoot-footnote__button:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+@media screen {	
+	body.bigfoot section.footnotes{
+		display: none;
+	}	
+}
 
 /* @end */

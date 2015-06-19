@@ -107,7 +107,7 @@
             </aside>
           </section>
           <section class="fieldset fieldset-radio">
-            <h1>Are you submitting assertions in accordance with DFARS 252.227-7017 "Identification and assertions use, release, or disclosure restriction"? See <a id="fn-1-a" href="#fn-1" class="footnote-button" rel="footnote">Section 11.5 of the solicitation</a>.</h1>
+            <h1>Are you submitting assertions in accordance with DFARS 252.227-7017 "Identification and assertions use, release, or disclosure restriction"? See Section 11.5 of the solicitation<a id="fn-1-a" href="#fn-1" class="footnote-button" rel="footnote">1</a>.</h1>
             <div class="field field-radio">
               <label>
                 <input type="radio" id="DFARS-yes" name="DFARS" value="yes"> 

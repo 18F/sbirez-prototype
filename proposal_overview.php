@@ -13,7 +13,7 @@
         <section>
           <h1 class="primary-header">Overview</h1>
           <p>Proposals are comprised of several parts, listed below. We&rsquo;ll help you submit your proposal by filling out the necessary paperwork, one step at a time.</p>
-          <? include "_includes/_toc.php" ?>
+          <? include "_includes/_proposal_toc.php" ?>
           <a href="#" id="validate-me" class="button">Validate me</a>
         </section>
         <aside>

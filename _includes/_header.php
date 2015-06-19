@@ -13,8 +13,8 @@
       </footer>
     </form>
     <nav class="primary">
-      <a class="my-proposals" href="my_proposals.php">My Proposals</a>
-      <a class="my-company" href="company_background.php">My Company</a>
+      <a class="my-proposals" href="proposals.php">My Proposals</a>
+      <a class="my-company" href="company.php">My Company</a>
       <a class="sign-out" href="sign_in.php">Sign Out</a>
     </nav>
   </div>
