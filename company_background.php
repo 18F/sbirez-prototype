@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <? include "_includes/_head.php"; ?>
-  <body class="my-company company-background">
+  <body class="company company-background">
     <? include "_includes/_header.php"; ?>
     <main role="main">
       <div class="wrap">
         <form action="index.html">
+          <? include "_includes/_company_nav.php" ?>
           <h1>Background</h1>
           <div class="field field-year">
             <label>

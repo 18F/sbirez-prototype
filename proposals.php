@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <? include "_includes/_head.php"; ?>
-  <body class="my-proposals">
+  <body class="proposals">
     <? include "_includes/_header.php"; ?>
     <main class="h-feed">
       <div class="wrap">
@@ -15,8 +15,7 @@
             </div>
             <nav>
               <a href="#">View details</a>
-              <form action="proposal_overview.php"><button>Start a proposal</button></form>
-              <form><button class="button-remove">Remove from my topics</button></form>
+              <form action="proposal_overview.php"><button>Continue proposal</button></form>
             </nav>
           </article>
         <? endfor; ?>

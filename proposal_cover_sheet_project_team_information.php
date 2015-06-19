@@ -15,7 +15,7 @@
     <main role="main">
       <div class="wrap">
         <form action="proposal_cover_sheet_principal_investigator_information.php">
-          <? include "_includes/_form_nav.php" ?>
+          <? include "_includes/_proposal_nav.php" ?>
           <h1>Project team information</h1>
           <section class="fieldset fieldset-radio">
             <h1>Are teaming partners or subcontractors proposed?</h1>

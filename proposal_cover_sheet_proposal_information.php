@@ -15,7 +15,7 @@
     <main role="main">
       <div class="wrap">
         <form action="proposal_cover_sheet_project_team_information.php">
-          <? include "_includes/_form_nav.php" ?>
+          <? include "_includes/_proposal_nav.php" ?>
           <h1>Proposal information</h1>
           <summary class="error-message">
             <h1>We&rsquo;ve detected 3 errors on this page.</h1> 
@@ -34,7 +34,7 @@
           </div>
           <section class="fieldset fieldset-discretionary-technical-assistance">
             <section class="fieldset fieldset-radio">
-              <h1>Does the proposed cost include discretionary technical assistance (<abbr title="discretionary technical assistance">DTA</abbr>)?</h1>
+              <h1>Does the proposed cost include discretionary technical assistance (<abbr title="Discretionary technical assistance">DTA</abbr>)?</h1>
               <div class="field field-radio">
                 <label>
                   <input type="radio" name="dta" id="dta-yes" value="yes">
@@ -57,7 +57,7 @@
           </section>
           <section class="fieldset fieldset-equivalent-work">
             <section class="fieldset fieldset-radio">
-              <h1>Has a proposal for essentially equivalent work been submitted to other <abbr title="United States">U.S.</abbr> government agencies or <abbr title="Department of Defense">D.o.D.</abbr> component?</h1>
+              <h1>Has a proposal for essentially equivalent work been submitted to other <abbr title="United States">U.S.</abbr> government agencies or <abbr title="Department of Defense">DoD</abbr> component?</h1>
               <div class="field field-radio">
                 <label>
                   <input type="radio" name="equivalent-work" id="equivalent-work-yes" value="yes">
@@ -75,7 +75,7 @@
               <h1>Equivalent work</h1>
               <div class="field field-text">
                 <label>
-                  <span class="label-text">List the name(s) of the agency or <abbr title="Department of Defense">D.o.D.</abbr> component. If SBIR or STTR, list Topic Number.</span>
+                  <span class="label-text">List the name(s) of the agency or <abbr title="Department of Defense">DoD</abbr> component. If SBIR or STTR, list Topic Number.</span>
                   <input type="text" id="equivalent-work-agencies" name="equivalent-work-agencies">
                 </label>
               </div>
@@ -107,7 +107,7 @@
             </aside>
           </section>
           <section class="fieldset fieldset-radio">
-            <h1>Are you submitting assertions in accordance with DFARS 252.227-7017 "Identification and assertions use, release, or disclosure restriction"? See <a href="#">Section 11.5 of the solicitation</a>.</h1>
+            <h1>Are you submitting assertions in accordance with DFARS 252.227-7017 "Identification and assertions use, release, or disclosure restriction"? See <a id="fn-1-a" href="#fn-1" class="footnote-button" rel="footnote">Section 11.5 of the solicitation</a>.</h1>
             <div class="field field-radio">
               <label>
                 <input type="radio" id="DFARS-yes" name="DFARS" value="yes"> 
@@ -153,6 +153,16 @@
           <footer>
             <button>Save and continue</button>
           </footer>
+
+          <section class="footnotes">
+            <h1>Footnotes</h1>
+            <ol>
+              <li class="footnote" id="fn-1">
+                <p> It&rsquo;s difficult to overstate how cumbersome this can make it for citizens looking to access the law. Imagine if the San Francisco Code weren&rsquo;t split into sections or subsections. It would take forever to find the information you need. Without clear organization, the law isn&rsquo;t very useful&mdash;to humans or machines. </p>
+                <a href="#fn-1-a" class="reversefootnote">Return</a>
+              </li>
+            </ol>
+          </section>
         </form>
       </div>
     </footer>

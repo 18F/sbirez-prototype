@@ -6,12 +6,15 @@ $(document).ready(function(){
         .parents('div.field.field-radio')
         .addClass('is-focused');
     })
-    .blur(function()){
+    .blur(function(){
       $(this)
         .parents('div.field.field-radio')
         .removeClass('is-focused');
     });
 
   $('.is-branch').hide();
+
+  $.bigfoot();
+  $('body').addClass('bigfoot');
 
 });

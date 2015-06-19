@@ -15,7 +15,7 @@
     <main role="main">
       <div class="wrap">
         <form action="proposal_overview.php">
-          <? include "_includes/_form_nav.php" ?>
+          <? include "_includes/_proposal_nav.php" ?>
           <h1>Company commercialization report</h1>
           <section class="fieldset">
             <h1>Contact information</h1>

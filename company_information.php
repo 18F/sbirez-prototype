@@ -11,6 +11,7 @@
     <main role="main">
       <div class="wrap">
         <form action="index.html">
+          <? include "_includes/_company_nav.php" ?>
           <h1>Company info</h1>
           <div class="field">
             <label>

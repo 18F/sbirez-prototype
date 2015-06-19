@@ -15,4 +15,15 @@
   <noscript><link href="images/icons.fallback.css" rel="stylesheet"></noscript>
   <link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
+
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="bower_components/bigfoot/dist/bigfoot-default.css">
+  <script type="text/javascript" src="bower_components/bigfoot/dist/bigfoot.min.js"></script>
+
+  <script src="javascripts/application.js"></script>
+
 </head>

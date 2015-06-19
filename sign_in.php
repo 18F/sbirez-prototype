@@ -5,7 +5,7 @@
     <? include "_includes/_header.php"; ?>
     <main role="main" class="proposal-content">
       <div class="wrap">
-        <form action="search_results_page.php">
+        <form action="home.php">
           <h1>Sign in</h1>
           <div class="field">
             <label>

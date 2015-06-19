@@ -15,7 +15,7 @@
     <main role="main">
       <div class="wrap">
         <form action="proposal_technical_volume.php">
-          <? include "_includes/_form_nav.php" ?>
+          <? include "_includes/_proposal_nav.php" ?>
           <h1>Principal Investigator (PI) / Corporate Official (CO) Information</h1>
           <section class="fieldset fieldset-principal-investigator">
             <h1>Principal investigator</h1>

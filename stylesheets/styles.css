@@ -16,10 +16,39 @@ body{
 }
 
 a{ color: #0064be; }
-a:hover{ color: #003c72; text-decoration: none;}
+a:hover{ color: #003c72; }
 
-a.a-return{ color: #777; font-size: 14px;}
-a.a-return:hover{ color: #555; }
+a.a-return{ 
+	color: #666; 
+	font-size: 14px;
+	display: block;
+	padding-top: 8px;
+}
+
+a.a-return::before{
+	content: "\2190";
+	color: #888;
+	margin-left: 4px;
+	margin-right: 10px;
+	display: inline-block;
+	background: #f3f3f3;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	border-radius: 100%;
+	text-align: center;
+	
+}
+a.a-return:hover{ color: #333; }
+a.a-return:hover::before{ color: #444; background: #eee;}
+
+
+
+
+
+@media screen and (min-width: 768.88px) {
+	a.a-return{ padding-top: 0; }
+}
 
 p, li, dd, dt {
 	line-height: 1.4em;
@@ -64,13 +93,16 @@ div.wrap::after{
 	clear: both;
 }
 
+
 h1.primary-header {
-	font-size: 36px;
-	font-family: 'franklin-gothic-urw-cond', sans-serif;
+	font-size: 32px;
+	font-family: 'franklin-gothic-urw-cond', Helvetica Neue, Helvetica, sans-serif;
 	margin-top: 24px;
-	margin-bottom: 0.24em;
+	margin-bottom: 0.6em;
 	margin-left: -0.03em;
 }
+
+@media screen and (min-width: 711.11px) { h1.primary-header{ font-size: 40px; } }
 
 main ol{ 
 	margin-bottom: 2em;
@@ -122,7 +154,7 @@ textarea{
 	-webkit-appearance: none;
 	padding: 4px 8px;
 	border: 1px solid #ccc;
-	border-radius: 0;
+	border-radius: 3px;
 	line-height: 36px;
 	min-height: 36px;
 	min-width: 10em;
@@ -177,6 +209,7 @@ button,
 	line-height: 16px;	
 	cursor: pointer;
 	text-decoration: none;
+	border-radius: 3px;
 }
 
 button:hover {
@@ -230,6 +263,7 @@ section.fieldset{
 	padding: 20px 16px 16px;
 	position: relative;
 	margin-bottom: 20px;
+	border-radius: 4px;
 }
 
 .fieldset+.fieldset:not(.fieldset-radio){ margin-top: 32px; }
@@ -463,21 +497,23 @@ main form footer p button{
 /* @group header.banner */
 
 header.banner{
-	background: #00529e;
+	background: #324c9d;
 	color: #fff;
-	line-height: 40px;
+	line-height: 32px;
 	overflow: hidden;
+	padding: 4px 0;
 }
 
 header.banner a{ color: white; }
-header.banner div.wrap{ padding-left: 124px; }
 
 header.banner h1{
-	float: left; 
-	width: 112px;
-	margin-left: -124px;
 	font-weight: 600;
+	margin-top: 4px;
 }
+
+header.banner h1 a{ text-decoration: none; }
+header.banner h1 a:hover{ text-decoration: underline; }
+
 
 header.banner h1 span.icon-logo{
 	display: inline-block;
@@ -495,10 +531,10 @@ header.banner div.field label {
 	width: 100%; 
 }
 
-header.banner nav{ 
-	font-size: 14px; 
-	margin-left: -10px;
+header.banner form{
+	margin-bottom: 8px;
 }
+
 header.banner nav::after{
 	content: "";
 	display: table;
@@ -506,15 +542,15 @@ header.banner nav::after{
 }
 header.banner nav a{ 
 	float: left;
-	padding: 0 10px;
+	padding: 0 8px;
 }
-header.banner nav a:hover{ color: #a3d3ff; }
+header.banner nav a:hover{
+	color: #a3d3ff; 
+}
 
-body.my-topics header.banner nav a.my-topics,
+body.proposals header.banner nav a.my-proposals,
 body.notifications header.banner nav a.notifications,
 body.my-company header.banner nav a.my-company {
-	color: #fefefe;
-	background: #002152;
 	text-decoration: none;
 }
 header.banner form span.label-text,
@@ -547,15 +583,75 @@ header.banner form div.field input {
 	color: #fff;
 }
 
-header.banner form div.field input:active {
+
+
+
+@media screen and (min-width: 355.55px) {
+	header.banner nav{ 
+		font-size: 12px; 
+		position: absolute;
+		top: 1px;
+		right: 0;
+	}
 }
 
+
+@media screen and (min-width: 444.44px) {
+
+	header.banner div.wrap{ padding-left: 124px; }
+
+	header.banner form{ 
+		margin-top: 3px; 
+		margin-bottom: 0;
+	}
+	
+	header.banner nav{ 
+		position: static;
+		font-size: 14px;
+		margin-left: -10px;
+		margin-top: 4px;
+	}
+
+	header.banner nav a{  padding: 0 10px; }
+	header.banner h1{
+		float: left; 
+		width: 112px;
+		margin: 0;
+		margin-left: -124px;
+	}
+}
+
+
 @media screen and (min-width: 768.88px) {
-	header.banner div.wrap{ padding-right: 288px; }
+
+	header.banner{
+		margin-bottom: 16px;
+		line-height: 32px;
+	}
+	
+	header.banner div.wrap{ 
+		padding: 8px 288px 9px 156px;
+	}
+	
+	header.banner h1{
+		width: 156px;
+		margin-left: -156px;
+		margin-top: 2px;
+	}
+		
+	header.banner h1 span.icon-logo{
+		width: 42px;
+		height: 36px;
+		position: relative;
+		top: -5px;
+		left: -1px;
+		margin-right: 6px;
+	}
+
 	header.banner nav{
 		position: absolute;
 		right: -0.8em;
-		top: 0;
+		top: 6px;
 		width: auto;
 	}	
 }
@@ -645,18 +741,8 @@ article.topic nav button:hover{
 
 /* @group is-favorite */
 
-article.topic.is-favorite h1::after{
-	background: #fff691;
-	content: "";
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	z-index: -1;
-	-webkit-transform: skew(-30deg);
-	-moz-transform: skew(-30deg);
-	transform: skew(-30deg);
+article.topic.is-favorite h1{
+	color: #b03a00;
 }
 
 /* @end */
@@ -810,6 +896,61 @@ nav.toc ol li span.toc-error-count{
 
 /* @end */
 
+/* @group body.home */
+
+body.home{
+	background-color: #022253;
+	color: white;
+}
+
+body.home header.banner{ margin-bottom: 24px; }
+body.home header.banner form{ display: none; }
+body.home main form div.field span.label-text{
+	position: absolute;
+	left: -9999em;
+}
+
+body.home main form{
+	position: relative;
+	padding-right: 96px;
+}
+
+body.home main form div.field input[type=text],
+body.home main form div.field input[type=search]{ 
+	border: none; 
+	height: 38px;
+	padding: 0;
+}
+
+body.home main form button{
+	color: white;
+	width: 84px;
+	position: absolute;
+	right: 0;
+	top: 12px;
+}
+
+body.home main form button:hover{
+	box-shadow: none;
+	border-color: yellow;
+	color: yellow;
+	background: none;
+}
+
+body.home main h1{
+	font-size: 48px;
+	margin-bottom: 0.4em;
+}
+
+body.home main p{ 
+	font-size: 20px; 
+	max-width: 32em;
+}
+body.home main p:first-of-type{ margin-bottom: 1.4em; }
+body.home main form{ border: none; }
+
+/* @end */
+
 /* @group body.proposal-cost-volume */
 
 section.fieldset-labor-related-costs > header,
@@ -865,7 +1006,15 @@ section.fieldset-direct-material-costs section.fieldset-direct-material-cost a.r
 	right: 16px;
 	font-size: 14px;
 	color: #e51600;
+	border-radius: 3px;
+	padding: 4px 6px;
 	
+}
+
+section.fieldset-direct-material-costs section.fieldset-direct-material-cost a.remove:hover{
+	background: #cc1602; 
+	color: white;
+	text-decoration: none;
 }
 
 
@@ -987,11 +1136,26 @@ footer.proposal-footer div.wrap{
 
 /* @end */
 
-/* @group body.search-results */
 
-body.search-results h1.primary-header {
-	margin-bottom: 1em;
+
+/* @group body.no-results */
+
+body.topics-no-results main div.wrap,
+body.proposals-no-results main div.wrap {
+	padding: 1em;
+	background: #f3f3f3;
+	margin-top: 1em;
+	border-radius: 8px;
 }
+
+body.proposals-no-results main div.wrap h1,
+body.topics-no-results main div.wrap h1{ margin-top: 0; }
+
+/* @end */
+
+/* @group body.topics */
+
+
 
 /* @end */
 
@@ -1017,12 +1181,14 @@ body.topic main nav form{
 }
 
 body.topic main h1{
-	font-size: 28px;
+	font-size: 24px;
 	line-height: 1.2em;
 	font-family: Georgia, serif;
 	margin-top: 1em;
 	margin-bottom: 0.4em;
 }
+
+@media screen and (min-width: 711.11px) { body.topic main h1{ font-size: 28px; } }
 
 body.topic main h2{
 	display: inline-block;
@@ -1049,7 +1215,7 @@ body.topic main section p{ margin-bottom: 1em; }
 
 
 @media screen and (min-width: 711.11px) {
-	body.topic main div.wrap{
+	body.topic main div.wrap header{
 		padding-right: 208px;
 		position: relative;
 	}
@@ -1063,25 +1229,6 @@ body.topic main section p{ margin-bottom: 1em; }
 
 	body.topic main div.wrap form{ display: block; }
 
-	body.topic main  nav a,
-	body.topic main nav button{
-		display: block;
-		color: #0064be;
-		width: 100%;
-		padding: 0.4em 0;
-		margin: 0;
-		border: none;
-		border-bottom: 1px solid #eee !important;
-		text-align: left;
-		box-shadow: none;
-	}
-	
-	body.topic main div.wrap nav a:hover,
-	body.topic main div.wrap nav button:hover{
-		background: #f8f8f8;
-		color: #333;
-		cursor: pointer;
-	}
 	
 }
 

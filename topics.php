@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <? include "_includes/_head.php"; ?>
-  <body class="search-results">
+  <body class="topics">
     <? include "_includes/_header.php"; ?>
     <main class="h-feed">
       <div class="wrap">

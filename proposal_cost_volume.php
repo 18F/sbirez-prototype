@@ -15,7 +15,7 @@
     <main role="main">
       <div class="wrap">
         <form action="proposal_company_commercialization_report.php">
-          <? include "_includes/_form_nav.php" ?>
+          <? include "_includes/_proposal_nav.php" ?>
           <h1>Cost volume</h1>
           <div class="field">
             <label>
