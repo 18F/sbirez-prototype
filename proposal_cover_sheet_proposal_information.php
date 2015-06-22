@@ -33,8 +33,8 @@
             <span class="error-message">Proposed cost must be non-zero.</span>
           </div>
           <section class="fieldset fieldset-discretionary-technical-assistance">
-            <section class="fieldset fieldset-radio">
-              <h1>Does the proposed cost include discretionary technical assistance (<abbr title="Discretionary technical assistance">DTA</abbr>)?</h1>
+            <section class="fieldset fieldset-radio" aria-describedby="dta-legend">
+              <h1 id="dta-legend">Does the proposed cost include discretionary technical assistance (<abbr title="Discretionary technical assistance">DTA</abbr>)?</h1>
               <div class="field field-radio">
                 <label>
                   <input type="radio" name="dta" id="dta-yes" value="yes">
@@ -56,8 +56,8 @@
             </aside>
           </section>
           <section class="fieldset fieldset-equivalent-work">
-            <section class="fieldset fieldset-radio">
-              <h1>Has a proposal for essentially equivalent work been submitted to other <abbr title="United States">U.S.</abbr> government agencies or <abbr title="Department of Defense">DoD</abbr> component?</h1>
+            <section class="fieldset fieldset-radio" aria-describedby="equivalent-work">
+              <h1 id="equivalent-work">Has a proposal for essentially equivalent work been submitted to other <abbr title="United States">U.S.</abbr> government agencies or <abbr title="Department of Defense">DoD</abbr> component?</h1>
               <div class="field field-radio">
                 <label>
                   <input type="radio" name="equivalent-work" id="equivalent-work-yes" value="yes">
@@ -80,8 +80,8 @@
                 </label>
               </div>
               <section class="fieldset">
-                <section class="fieldset fieldset-radio">
-                  <h1>Has a contract been awarded for any of the proposals listed above?</h1>
+                <section class="fieldset fieldset-radio" aria-describedby="equivalent-work-award-legend">
+                  <h1 id="equivalent-work-award-legend">Has a contract been awarded for any of the proposals listed above?</h1>
                   <div class="field field-radio">
                     <label>
                       <input type="radio" name="equivalent-work-award" id="equivalent-work-award-yes" value="yes"> 
@@ -106,8 +106,8 @@
               </section>
             </aside>
           </section>
-          <section class="fieldset fieldset-radio">
-            <h1>Are you submitting assertions in accordance with DFARS 252.227-7017 "Identification and assertions use, release, or disclosure restriction"? See Section 11.5 of the solicitation<a id="fn-1-a" href="#fn-1" class="footnote-button" rel="footnote">1</a>.</h1>
+          <section class="fieldset fieldset-radio" aria-describedby="DFARS-legend">
+            <h1 id="DFARS-legend">Are you submitting assertions in accordance with DFARS 252.227-7017 "Identification and assertions use, release, or disclosure restriction"? See Section 11.5 of the solicitation<a id="fn-1-a" href="#fn-1" class="footnote-button" rel="footnote">1</a>.</h1>
             <div class="field field-radio">
               <label>
                 <input type="radio" id="DFARS-yes" name="DFARS" value="yes"> 

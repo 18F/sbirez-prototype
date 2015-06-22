@@ -18,7 +18,7 @@
             <p>Please fix the validation errors by clicking on the sections, above.</p>
           </div>
           <div class="notice">
-            <p><strong>Note:</strong> You&rsquo;ll need to fill in <a href="#">your company information</a> before you can submit a proposal.</p>
+            <p><strong>Note:</strong> You&rsquo;ll need to fill in <a href="company.php">your company information</a> before you can submit a proposal.</p>
           </div>
           <a href="#" id="validate-me" class="button">Validate me</a>
         </section>
