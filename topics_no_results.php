@@ -6,7 +6,7 @@
     <main class="h-feed">
       <div class="wrap">
         <h1 class="primary-header">No Results for <span class="query"><?= $query ?></span></h1>
-        <p>We couldn&rsquo;t find any topic solicitations matching your search term.</p>
+        <p>We couldn&rsquo;t find any solicitations matching your search term.</p>
       </div>
     </main>
     <? include "_includes/_footer.php"; ?>

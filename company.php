@@ -6,7 +6,7 @@
     <main role="main">
       <div class="wrap">
         <form action="index.html">
-          <h1>My Company</h1>
+          <h1 class="primary-header">My Company</h1>
           <div class="field">
             <label>
               <span class="label-text">Company name</span>
