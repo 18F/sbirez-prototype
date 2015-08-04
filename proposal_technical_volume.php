@@ -17,8 +17,8 @@
         <form action="proposal_cost_volume.php">
           <? include "_includes/_proposal_nav.php" ?>
           <h1>Technical volume</h1>
-          <section class="fieldset fieldset-radio" aria-describedby="reviewed-requirements-legend">
-            <h1 id="reviewed-requirements-legend">Have you reviewed all the requirements in the Air Force and DoD Solicitation instructions?</h1>
+          <fieldset class="fieldset-radio">
+            <legend>Have you reviewed all the requirements in the Air Force and DoD Solicitation instructions?</legend>
             <div class="field field-radio">
               <label>
                 <input type="radio" name="reviewed-requirements" id="reviewed-requirements-yes" value="yes">
@@ -31,8 +31,8 @@
                 <span class="label-text">No</span>
               </label>
             </div>
-          </section>
-          <section class="fieldset fieldset-radio" aria-describedby="pdf-legend">
+          </fieldset>
+          <fieldset class="fieldset-radio" aria-describedby="pdf-legend">
             <h1 id="pdf-legend">Is the technical volume a single portable document format (PDF) file, including graphics?</h1>
             <div class="field field-radio">
               <label>

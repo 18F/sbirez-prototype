@@ -17,8 +17,8 @@
         <form action="proposal_technical_volume.php">
           <? include "_includes/_proposal_nav.php" ?>
           <h1>Principal Investigator (PI) / Corporate Official (CO) Information</h1>
-          <section class="fieldset fieldset-principal-investigator">
-            <h1>Principal investigator</h1>
+          <fieldset class="fieldset-principal-investigator">
+            <legend>Principal investigator</legend>
             <div class="field field-name">
               <label>
                 <span class="label-text">Name</span>
@@ -49,8 +49,8 @@
                 <input type="email" name="principal-investigator-email" id="principal-investigator-email" value="">
               </label>
             </div>
-            <section class="fieldset fieldset-radio">
-              <h1>Is this person a woman?</h1>
+            <fieldset class="fieldset-radio">
+              <legend>Is this person a woman?</legend>
               <div class="field field-radio">
                 <label>
                   <input type="radio" name="woman" id="woman-yes" value="yes">
@@ -63,9 +63,9 @@
                   <span class="label-text">No</span>
                 </label>
               </div>
-            </section>
-            <section class="fieldset fieldset-radio">
-              <h1>Is this person socially/economically disadvantaged?</h1>
+            </fieldset>
+            <fieldset class="fieldset-radio">
+              <legend>Is this person socially/economically disadvantaged?</legend>
               <div class="field field-radio">
                 <label>
                   <input type="radio" name="disadvantaged" id="disadvantaged-yes" value="yes" tabindex="0">
@@ -78,10 +78,10 @@
                   <span class="label-text">No</span>
                 </label>
               </div>
-            </section>
-          </section>
-          <section class="fieldset">
-            <h1>Corporate Official (Business)</h1>
+            </fieldset>
+          </fieldset>
+          <fieldset class="fieldset-corporate-official">
+            <legend>Corporate Official (Business)</legend>
             <div class="field field-name">
               <label>
                 <span class="label-text">Name</span>
@@ -111,9 +111,10 @@
                 <span class="label-text">Email</span>
                 <input type="text" name="corporate-official-email" id="corporate-official-email" value="">
               </label>
-            </div>          </section>
-          <section class="fieldset fieldset-radio">
-            <h1>Is your firm&rsquo;s PI, CO, or owner a faculty member or student of an institution of higher education?</h1>
+            </div>
+          </fieldset>
+          <fieldset class="fieldset-radio">
+            <legend>Is your firm&rsquo;s PI, CO, or owner a faculty member or student of an institution of higher education?</legend>
             <div class="field field-radio">
               <label>
                 <input type="radio" id="foreign-nationals-yes" name="foreign-nationals" value="yes"> 
@@ -126,7 +127,7 @@
                 <span class="label-text">No</span>
               </label>
             </div>
-          </section>
+          </fieldset>
           <footer>
             <button>Save and continue</button>
           </footer>

@@ -32,40 +32,41 @@
             </label>
             <span class="error-message">Proposed cost must be non-zero.</span>
           </div>
-          <section class="fieldset fieldset-discretionary-technical-assistance">
-            <section class="fieldset fieldset-radio" aria-describedby="dta-legend">
-              <h1 id="dta-legend">Does the proposed cost include discretionary technical assistance (<abbr title="Discretionary technical assistance">DTA</abbr>)?</h1>
+          <fieldset class="fieldset-discretionary-technical-assistance">
+            <legend>Discretionary technical assistance</legend>
+            <fieldset class="fieldset-radio" aria-describedby="dta-legend">
+              <legend id="dta-legend"><span class="legend-text">Does the proposed cost include discretionary technical assistance (<abbr title="Discretionary technical assistance">DTA</abbr>)?</span></legend>
               <div class="field field-radio">
-                <label>
+                <label for="dta-yes">
                   <input type="radio" name="dta" id="dta-yes" value="yes">
                   <span class="label-text">Yes</span>
                 </label>
               </div>
               <div class="field field-radio">
-                <label>
+                <label for="dta-no">
                   <input type="radio" name="dta" id="dta-no" value="no">
                   <span class="label-text">No</span>
                 </label>
               </div>
-            </section>
+            </fieldset>
             <aside class="is-branch">
               <div class="field field-proposed-dta-amount">
                 <span class="label-text">What is the proposed <abbr title="discretionary technical assistance">DTA</abbr> amount?</span>
                 <input type="text" id="dta-amount" name="dta-amount" />
               </div>
             </aside>
-          </section>
+          </fieldset>
           <section class="fieldset fieldset-equivalent-work">
             <section class="fieldset fieldset-radio" aria-describedby="equivalent-work">
               <h1 id="equivalent-work">Has a proposal for essentially equivalent work been submitted to other <abbr title="United States">U.S.</abbr> government agencies or <abbr title="Department of Defense">DoD</abbr> component?</h1>
               <div class="field field-radio">
-                <label>
+                <label for="equivalent-work-yes">
                   <input type="radio" name="equivalent-work" id="equivalent-work-yes" value="yes">
                   <span class="label-text">Yes</span>
                 </label>
               </div>
               <div class="field field-radio">
-                <label>
+                <label for="equivalent-work-no">
                   <input type="radio" name="equivalent-work" id="equivalent-work-no" value="no">
                   <span class="label-text">No</span>
                 </label>
@@ -74,7 +75,7 @@
             <aside class="fieldset fieldset-equivalent-work-detail is-branch">
               <h1>Equivalent work</h1>
               <div class="field field-text">
-                <label>
+                <label for="equivalent-work-agencies">
                   <span class="label-text">List the name(s) of the agency or <abbr title="Department of Defense">DoD</abbr> component. If SBIR or STTR, list Topic Number.</span>
                   <input type="text" id="equivalent-work-agencies" name="equivalent-work-agencies">
                 </label>
@@ -83,13 +84,13 @@
                 <section class="fieldset fieldset-radio" aria-describedby="equivalent-work-award-legend">
                   <h1 id="equivalent-work-award-legend">Has a contract been awarded for any of the proposals listed above?</h1>
                   <div class="field field-radio">
-                    <label>
+                    <label for="equivalent-work-award-yes">
                       <input type="radio" name="equivalent-work-award" id="equivalent-work-award-yes" value="yes"> 
                       <span class="label-text">Yes</span>
                     </label>
                   </div>
                   <div class="field field-radio">
-                    <label>
+                    <label for="equivalent-work-award-no">
                       <input type="radio" name="equivalent-work-award" id="equivalent-work-award-no" value="no"> 
                       <span class="label-text">No</span>
                     </label>
@@ -97,7 +98,7 @@
                 </section>
                 <aside class="is-branch">
                   <div class="field field-text field-contract-number">
-                    <label>
+                    <label for="equivalent-work-award-number">
                       <span class="label-text">Please provide the contract number:</span>
                       <input type="text" name="equivalent-work-award-number" id="equivalent-work-award-number" value=""> 
                     </label>
@@ -109,13 +110,13 @@
           <section class="fieldset fieldset-radio" aria-describedby="DFARS-legend">
             <h1 id="DFARS-legend">Are you submitting assertions in accordance with DFARS 252.227-7017 "Identification and assertions use, release, or disclosure restriction"? See Section 11.5 of the solicitation<a id="fn-1-a" href="#fn-1" class="footnote-button" rel="footnote">1</a>.</h1>
             <div class="field field-radio">
-              <label>
+              <label for="DFARS-yes">
                 <input type="radio" id="DFARS-yes" name="DFARS" value="yes"> 
                 <span class="label-text">Yes</span>
               </label>
             </div>
             <div class="field field-radio">
-              <label>
+              <label for="DFARS-no">
                 <input type="radio" id="DFARS-no" name="DFARS" value="no"> 
                 <span class="label-text">No</span>
               </label>
@@ -124,13 +125,13 @@
           <section class="fieldset fieldset-radio is-error">
             <h1>Are you proposing research that utilizes human/animal subjects or recombinant DNA as described in section [3.11], [3.12], and [3.13] of the solicitation?</h1>
             <div class="field field-radio">
-              <label>
+              <label for="animal-or-dna-yes">
                 <input type="radio" id="animal-or-dna-yes" name="animal-or-dna" value="yes"> 
                 <span class="label-text">Yes</span>
               </label>
             </div>
             <div class="field field-radio">
-              <label>
+              <label for="animal-or-dna-no">
                 <input type="radio" id="animal-or-dna-no" name="animal-or-dna" value="no"> 
                 <span class="label-text">No</span>
               </label>
@@ -138,13 +139,13 @@
             <span class="error-message">You must answer this question.</span>
           </section>
           <div class="field field-textarea">
-            <label>
+            <label for="technical-abstract">
               <span class="label-text">Technical Abstract (Limit your abstract to 200 words with no classified or proprietary information)</span>
               <textarea id="technical-abstract" name="technical-abstract"></textarea>
             </label>
           </div>
           <div class="field field-textarea is-error">
-            <label>
+            <label for="anticipated-benefits">
               <span class="label-text">Anticipated Benefits/Potential Commercial Applications of the Research or Development. (No classified or proprietary information)</span>
               <textarea id="anticipated-benefits" name="anticipated-benefits"></textarea>
             </label>

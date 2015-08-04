@@ -162,9 +162,27 @@ summary.error-message details ol li{
 
 /* @end */
 
+legend {
+  padding: 0;
+  display: table;
+}
+
+fieldset {
+  border: 0;
+  padding: 0.01em 0 0 0;
+  margin: 0;
+  min-width: 0;
+}
+
+body:not(:-moz-handler-blocked) fieldset {
+  display: table-cell;
+}
+
+
 label { display: block; }
 
 input[type=text],
+input[type=date],
 input[type=email],
 input[type=number],
 input[type=password],
@@ -279,27 +297,30 @@ form a.a-return + h1{
 
 div.field,
 section.fieldset,
-section.fieldset.fieldset-radio{ margin-bottom: 24px; }
+.fieldset-radio{ margin-bottom: 24px; }
 
-div.field+section.fieldset{ margin-top: 32px; }
+div.field+section.fieldset,
+div.field+fieldset{ margin-top: 32px; }
 
-section.fieldset{
+fieldset.fieldset-principal-investigator,
+fieldset.fieldset-corporate-official{
 	border: 1px solid #cfcfcf;
 	padding: 20px 16px 16px;
 	position: relative;
-	margin-bottom: 20px;
+	margin-bottom: 32px;
 	border-radius: 4px;
 }
 
-.fieldset+.fieldset:not(.fieldset-radio){ margin-top: 32px; }
+fieldset.fieldset-corporate-official{ margin-bottom: 24px; }
 
-.fieldset-principal-investigator .fieldset:last-of-type,
+.fieldset-principal-investigator fieldset:last-of-type,
 .fieldset-labor-related-cost .field:last-of-type,
 .fieldset-direct-material-cost .field:last-of-type{
-	margin-bottom: 2px;
+	margin-bottom: 0;
 }
 
-section.fieldset > h1,
+fieldset.fieldset-principal-investigator > legend,
+fieldset.fieldset-corporate-official > legend,
 section.fieldset > header > h1{
 	position: absolute;
 	background: white;
@@ -327,9 +348,11 @@ section.fieldset div.field:last-of-type+section.fieldset{
 	border: none;
 }
 
+.fieldset-discretionary-technical-assistance > legend,
 .fieldset.fieldset-equivalent-work-detail > h1,
 .fieldset.fieldset-phase-2 > h1{ display: none; }
 
+.fieldset-radio > legend,
 section.fieldset.fieldset-radio > h1,
 div.field span.label-text{
 	display: block;	
@@ -1602,5 +1625,14 @@ body .bigfoot-footnote__button:after {
 		display: none;
 	}	
 }
+
+/* @end */
+
+/* @group body.proposal-cover-sheet-principal-investigator-information */
+
+body.proposal-cover-sheet-principal-investigator-information form > h1 {
+	margin-bottom: 32px;
+}
+
 
 /* @end */
