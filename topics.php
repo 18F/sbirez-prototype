@@ -5,7 +5,10 @@
     <? include "_includes/_header.php"; ?>
     <main class="h-feed">
       <div class="wrap">
-        <h1 class="p-name primary-header">151 Results for <span class="query"><?= $query ?></span> </h1>
+        <header class="topics-header">
+          <h1 class="p-name primary-header">Topics matching <span class="query"><?= $query ?></span> </h1>
+          <? include "_includes/_pagination.php" ?>
+        </header>
         <article id="AF151-06<? echo $i; ?>" class="topic h-entry is-favorite">
             <a href="topic.php" class="topic-content">
             <h1 class="entry-title">Monopropellant Thrusters for Cubesats</h1>

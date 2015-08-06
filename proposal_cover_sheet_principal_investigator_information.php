@@ -7,7 +7,7 @@
       <div class="wrap">
         <h1>
           <a href="proposal_overview.php">
-            Proposal for <span class="topic">Solar Electric Propulsion for Agile Space Capabilities</span>
+            Proposal for Solar Electric Propulsion for Agile Space Capabilities
           </a>
         </h1>
       </div>

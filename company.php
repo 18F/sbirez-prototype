@@ -31,6 +31,7 @@
               <div class="field field-state field-select">
                 <label for="parties-requesting-agency-mailing-address-state">
                   <span class="label-text">State</span>
+                  <span class="label-select">
                   <select name="parties-requesting-agency-mailing-address-state" id="parties-requesting-agency-mailing-address-state" type="text">
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -83,7 +84,8 @@
                     <option value="WV">West Virginia</option>
                     <option value="WI">Wisconsin</option>
                     <option value="WY">Wyoming</option>
-                  </select>
+                  </select>                    
+                  </span>
                 </label>
               </div>
               <div class="field field-zip">

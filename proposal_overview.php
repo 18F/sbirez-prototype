@@ -5,7 +5,7 @@
     <? include "_includes/_header.php"; ?>
     <header class="proposal-banner">
       <div class="wrap">
-        <h1>Proposal for <span class="topic">Solar Electric Propulsion for Agile Space Capabilities</span></h1>
+        <h1>Proposal for Solar Electric Propulsion for Agile Space Capabilities</h1>
       </div>
     </header>
     <main role="main" class="proposal-content">
@@ -45,7 +45,7 @@
             <h2>AF151-061</h2>
             <p class="entry-summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>              
           </a>
-          <nav>
+          <nav class="topic-nav">
             <a href="topic.php">View details</a>
           </nav>
         </article>
