@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <? include "_includes/_head.php"; ?>
-  <body class="topic">
+  <body>
     <? include "_includes/_header.php"; ?>
-    <main class="topic">
+    <main class="topic-show">
       <div class="wrap">
         <a class="a-return" href="topics.php?query=test">Back to search results</a>
         <header>

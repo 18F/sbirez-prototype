@@ -23,13 +23,11 @@
               <input type="text" name="work-location" id="work-location" value="">
             </label>
           </div>
-          <section class="fieldset fieldset-labor-related-costs">
-            <header>
-              <h1>Labor-related costs</h1>
-              <a href="#">Add another</a>
-            </header>
-            <section class="fieldset fieldset-labor-related-cost">
-              <h1>Principal investigator</h1>
+          <section class="labor-related-costs">
+            <h1>Labor-related costs</h1>
+            <a href="#" class="labor-related-costs-add">Add another</a>
+            <fieldset class="labor-related-cost">
+              <legend>Principal investigator</legend>
               <div class="field field-category">
                 <label>
                   <span class="label-text">Category or individual</span>
@@ -48,7 +46,7 @@
                   <input type="text" name="principal-investigator-estimated-hours" id="principal-investigator-estimated-hours" value="">
                 </label>
               </div>
-            </section>            
+            </fieldset>            
             <div class="field field-overhead">
               <label>
                 <span class="label-text">Overhead</span>
@@ -62,13 +60,11 @@
               </label>
             </div>
           </section>
-          <section class="fieldset fieldset-direct-material-costs">
-            <header>
-              <h1>Direct-material costs</h1>
-              <a href="#">Add another</a>
-            </header>
-            <section class="fieldset fieldset-direct-material-cost">
-              <h1>Direct material 1</h1>
+          <section class="direct-material-costs">
+            <h1>Direct-material costs</h1>
+            <a href="#" class="direct-material-costs-add">Add another</a>
+            <fieldset class="direct-material-cost">
+              <legend>Direct material 1</legend>
               <div class="field field-name">
                 <label>
                   <span class="label-text">Name</span>
@@ -81,12 +77,10 @@
                   <input type="text" name="overhead" id="direct-material-1-phase-1-cost" value="">
                 </label>
               </div>              
-            </section>
-            <section class="fieldset fieldset-direct-material-cost" id="direct-material-2">
-              <header>
-                <h1>Direct material 2</h1>
-                <a href="#" class="remove">Remove</a>
-              </header>
+            </fieldset>
+            <fieldset class="direct-material-cost" id="direct-material-2">
+              <legend>Direct material 2</legend>
+              <a href="#" class="direct-material-cost-remove">Remove</a>
               <div class="field field-name">
                 <label>
                   <span class="label-text">Name</span>
@@ -99,7 +93,7 @@
                   <input type="text" name="overhead" id="direct-material-1-phase-1-cost" value="">
                 </label>
               </div>              
-            </section>
+            </fieldset>
             <div class="field field-overhead">
               <label>
                 <span class="label-text">Overhead</span>

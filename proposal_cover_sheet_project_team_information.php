@@ -17,8 +17,8 @@
         <form action="proposal_cover_sheet_principal_investigator_information.php">
           <? include "_includes/_proposal_nav.php" ?>
           <h1>Project team information</h1>
-          <section class="fieldset fieldset-radio">
-            <h1>Are teaming partners or subcontractors proposed?</h1>
+          <fieldset class="fieldset fieldset-radio">
+            <legend>Are teaming partners or subcontractors proposed?</legend>
             <div class="field field-radio">
               <label>
                 <input type="radio" name="teaming-partners" id="teaming-partners-yes" value="yes">
@@ -31,16 +31,17 @@
                 <span class="label-text">No</span>
               </label>
             </div>
-          </section>
-          <section class="fieldset fieldset-checkbox">
-            <h1>Will you be working with a&hellip;</h1>
-            <div class="field field-checkbox">
+          </fieldset>
+          <fieldset class="fieldset fieldset-checkbox fieldset-working-with">
+            <legend>Will you be working with a&hellip;</legend>
+            <div class="field field-checkbox" data-branch-name="working-with-a-university">
               <label>
-                <input type="checkbox" name="working-with-a" id="working-with-a-university" value="university" checked>
+                <input type="checkbox" name="working-with-a" id="working-with-a-university" value="university">
                 <span class="label-text">University</span>
               </label>
             </div>
-            <section class="fieldset is-branch">
+            <aside class="branch" data-branch-name="working-with-a-university" data-branch-value="university">
+              <h1 class="branch-logic">If university</h1>
               <div class="field field-collaborator-name">
                 <label>
                   <span class="label-text">Which one?</span>
@@ -53,7 +54,7 @@
                   <input type="text">
                 </label>
               </div>
-            </section>
+            </aside>
             <div class="field field-checkbox">
               <label>
                 <input type="checkbox" name="working-with-a" id="working-with-a-hbcu" value="hbcu">
@@ -62,13 +63,13 @@
             </div>
             <div class="field field-checkbox">
               <label>
-                <input type="checkbox" name="working-with-a" id="working-with-a-nonprofit" value="university">
+                <input type="checkbox" name="working-with-a" id="working-with-a-nonprofit" value="nonprofit">
                 <span class="label-text">Nonprofit</span>
               </label>
             </div>
             <div class="field field-checkbox">
               <label>
-                <input type="checkbox" name="working-with-a" id="working-with-a-federal-laboratory" value="university">
+                <input type="checkbox" name="working-with-a" id="working-with-a-federal-laboratory" value="federal-laboratory">
                 <span class="label-text">Federal laboratory</span>
               </label>
             </div>
@@ -96,9 +97,9 @@
                 <span class="label-text">Other</span>
               </label>
             </div>
-          </section><!-- fieldset#equivalent-work -->
-          <section class="fieldset fieldset-radio">
-            <h1>Are you proposing to use foreign nationals as defined in section 3.5 of the solicitation for work under the proposed effort?</h1>
+          </fieldset><!-- fieldset#equivalent-work -->
+          <fieldset class="fieldset fieldset-radio">
+            <legend>Are you proposing to use foreign nationals as defined in section 3.5 of the solicitation for work under the proposed effort?</legend>
             <div class="field field-radio">
               <label>
                 <input type="radio" id="foreign-nationals-yes" name="foreign-nationals" value="yes"> 
@@ -111,7 +112,7 @@
                 <span class="label-text">No</span>
               </label>
             </div>
-          </section>
+          </fieldset>
           <footer>
             <button>Save and continue</button>
           </footer>

@@ -17,19 +17,21 @@
         <form action="proposal_overview.php">
           <? include "_includes/_proposal_nav.php" ?>
           <h1>Company commercialization report</h1>
-          <section class="fieldset">
-            <h1>Contact information</h1>
+          <fieldset class="fieldset-contact-information">
+            <legend>Contact information</legend>
             <div class="field field-select field-honorific">
               <label>
                 <span class="label-text">Honorific</span>
-                <select>
-                  <option>None</option>
-                  <option>Dr.</option>
-                  <option>Mr.</option>
-                  <option>Ms.</option>
-                  <option>Mrs.</option>
-                  <option>Miss.</option>
-                </select>
+                <span class="label-select">
+                  <select>
+                    <option>None</option>
+                    <option>Dr.</option>
+                    <option>Mr.</option>
+                    <option>Ms.</option>
+                    <option>Mrs.</option>
+                    <option>Miss.</option>
+                  </select>
+                </span>
               </label>
             </div>
             <div class="field field-name">
@@ -62,7 +64,7 @@
                 <input type="email" name="principal-investigator-email" id="principal-investigator-email" value="">
               </label>
             </div>
-          </section>
+          </fieldset>
           <div class="field field-textarea">
             <label>
               <span class="label-text">What&rsquo;s this company&rsquo;s commercialization track record?</span>

@@ -32,8 +32,8 @@
               </label>
             </div>
           </fieldset>
-          <fieldset class="fieldset-radio" aria-describedby="pdf-legend">
-            <h1 id="pdf-legend">Is the technical volume a single portable document format (PDF) file, including graphics?</h1>
+          <fieldset class="fieldset-radio">
+            <legend>Is the technical volume a single portable document format (PDF) file, including graphics?</legend>
             <div class="field field-radio">
               <label>
                 <input type="radio" name="pdf" id="pdf-yes" value="yes">
@@ -46,9 +46,9 @@
                 <span class="label-text">No</span>
               </label>
             </div>
-          </section>
-          <section class="fieldset fieldset-radio" aria-describedby="virus-scan-legend">
-            <h1 id="virus-scan-legend">Did you virus scan the document?</h1>
+          </fieldset>
+          <fieldset class="fieldset fieldset-radio">
+            <legend>Did you virus scan the document?</legend>
             <div class="field field-radio">
               <label>
                 <input type="radio" name="virus-scan" id="virus-scan-yes" value="yes">
@@ -61,9 +61,9 @@
                 <span class="label-text">No</span>
               </label>
             </div>
-          </section>
-          <section class="fieldset fieldset-radio" aria-describedby="length-legend">
-            <h1 id="length-legend">Is the document less than or equal to twenty pages in length?</h1>
+          </fieldset>
+          <fieldset class="fieldset fieldset-radio">
+            <legend>Is the document less than or equal to twenty pages in length?</legend>
             <div class="field field-radio">
               <label>
                 <input type="radio" name="length" id="length-yes" value="yes">
@@ -76,9 +76,9 @@
                 <span class="label-text">No</span>
               </label>
             </div>
-          </section>
-          <section class="fieldset fieldset-radio" aria-describedby="formatting-legend">
-            <h1 id="formatting-legend">Is the font 10 pt. or larger on 8-1/2" &times; 11" paper with one-inch margins?</h1>
+          </fieldset>
+          <fieldset class="fieldset fieldset-radio">
+            <legend>Is the font 10 pt. or larger on 8-1/2" &times; 11" paper with one-inch margins?</legend>
             <div class="field field-radio">
               <label>
                 <input type="radio" name="formatting" id="formatting-yes" value="yes">
@@ -91,9 +91,9 @@
                 <span class="label-text">No</span>
               </label>
             </div>
-          </section>
-          <section class="fieldset fieldset-radio" aria-describedby="header-legend">
-            <h1 id="header-legend">Does the document contain a header with the company name, topic number, and proposal number? This header can exist in the margin.</h1>
+          </fieldset>
+          <fieldset class="fieldset fieldset-radio">
+            <legend>Does the document contain a header with the company name, topic number, and proposal number? This header can exist in the margin.</legend>
             <div class="field field-radio">
               <label>
                 <input type="radio" name="header" id="header-yes" value="yes">
@@ -106,7 +106,7 @@
                 <span class="label-text">No</span>
               </label>
             </div>
-          </section>
+          </fieldset>
           <div class="field">
             <label>
               <span class="label-text">Upload technical volume</span>
