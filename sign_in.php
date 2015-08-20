@@ -21,6 +21,8 @@
           </div>
           <footer>
             <button class="button">Sign in</button>
+            <a ui-sref="reset" class="sign-in-reset">Forgot your password?</a>
+            <p>Need an account? <a ui-sref="signup(intention)">Sign up</a>!</p>
           </footer>
         </form>
       </div>

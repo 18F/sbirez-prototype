@@ -3,7 +3,7 @@
   <? include "_includes/_head.php"; ?>
   <body class="proposal proposal-cover-sheet proposal-cover-sheet-project-team-information">
     <? include "_includes/_header.php"; ?>
-    <header class="proposal-banner">
+    <header class="proposal-header">
       <div class="wrap">
         <h1>
           <a href="proposal_overview.php">

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <? include "_includes/_head.php"; ?>
-  <body>
+  <body class="topic-show">
     <? include "_includes/_header.php"; ?>
-    <main class="topic-show">
+    <main class="topic">
       <div class="wrap">
         <a class="a-return" href="topics.php?query=test">Back to search results</a>
-        <header>
+        <header class="topic-header">
           <h1 class="primary-header">Waveform Agile, Low-cost Multi-function Radio Frequency ISR in Contested Environment</h1>
           <h2>SBIR AF151-145</h2>
-          <nav>
+          <nav class="topic-nav">
             <form action="proposal_overview.php"><button>Start a proposal</button></form>
           </nav>
         </header>

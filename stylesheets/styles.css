@@ -2,6 +2,8 @@
 
 /* @override http://127.0.0.1:4000/stylesheets/styles.css */
 
+/* @override http://127.0.0.1:4000/stylesheets/styles.css */
+
 /* @group bootstrap */
 
 body{
@@ -13,6 +15,7 @@ body{
 a{ color: #0064be; }
 a:hover{ color: #003c72; }
 
+a.skip-nav{ position: absolute; left: -9999em; }
 a.a-return{ 
 	color: #666; 
 	font-size: 14px;
@@ -72,6 +75,8 @@ div.wrap{
 	max-width: 800px;
 	margin: 0 auto;
 	position: relative;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 }
 
 div.wrap::after{
@@ -191,7 +196,7 @@ select,
 textarea{
 	-webkit-appearance: none;
 	padding: 4px 8px;
-	border: 1px solid #ccc;
+	border: 1px solid #bbb;
 	border-radius: 3px;
 	line-height: 36px;
 	min-height: 36px;
@@ -252,7 +257,7 @@ button,
 	border: 1px solid;
 	color: #008c52;
 	font: inherit;
-	padding: 10px 12px;
+	padding: 9px 12px;
 	margin: 0;
 	line-height: 16px;	
 	cursor: pointer;
@@ -295,15 +300,15 @@ body.sign-up-post main h1,
 .direct-material-costs > h1 {
 	margin-top: 32px;
 	margin-bottom: 16px;
-	font-size: 24px;
+	font-size: 28px;
 	line-height: 32px;
-	color: #107b7b;
+	color: #444;
 	font-family: Georgia;
 }
 
 form > h1:first-of-type{
 	margin-top: 0;
-	padding-top: 32px;
+	padding-top: 24px;
 	
 }
 
@@ -325,7 +330,8 @@ fieldset.fieldset-point-of-contact,
 fieldset.fieldset-contact-information,
 fieldset.fieldset-checkbox,
 fieldset.labor-related-cost,
-fieldset.direct-material-cost{
+fieldset.direct-material-cost,
+fieldset.dynamic-item{
 	border: 1px solid #cfcfcf;
 	padding: 20px 16px 16px;
 	position: relative;
@@ -347,7 +353,8 @@ fieldset.fieldset-point-of-contact > legend,
 fieldset.fieldset-contact-information > legend,
 fieldset.fieldset-checkbox > legend,
 fieldset.labor-related-cost > legend,
-fieldset.direct-material-cost > legend{
+fieldset.direct-material-cost > legend,
+fieldset.dynamic-item > legend{
 	position: absolute;
 	background: white;
 	margin: 0 0 -3px;
@@ -384,23 +391,26 @@ section.fieldset.fieldset-radio > h1,
 div.field span.label-text{
 	display: block;	
 	max-width: 40em;
-	margin: 0 0 8px;
+	margin: 0 0 10px;
 	padding: 0;
 	position: static;
 	font: inherit;
-	line-height: 20px;
-	color: inherit;
+	line-height: 24px;
+	color: #333;
 }
 
 div.field.field-radio{ 
 	display: inline-block; 
 	vertical-align: middle;
 	margin-bottom: 0;
+	margin-right: 4px;
 }
+
 div.field.field-radio label{
 	display: inline-block;
-	padding: 0 12px 4px 12px;
-	border: 1px solid #ccc;
+	padding: 0 12px 1px 12px;
+	border: 1px solid #bbb;
+	border-bottom-color: #b3b3b3;
 	min-height: 32px;
 	line-height: 32px;
 	vertical-align: middle;
@@ -439,11 +449,6 @@ div.field.field-checkbox input{
 
 div.field.field-checkbox+div.field.field-checkbox{ margin-top: 4px; }
 
-div.field.field-checkbox+.is-branch{
-	margin-top: -4px !important;
-	margin-left: 3px;
-	margin-bottom: 16px;
-}
 
 div.field.is-error input,
 div.field.is-error textarea{
@@ -527,6 +532,8 @@ fieldset.fieldset-mailing-address div.field.field-zip input{
 	width: 75%;	
 }
 
+.field-email input,
+.field-med_str input,
 .field-name input,
 .field-title input,
 .field-category input,
@@ -537,17 +544,41 @@ fieldset.fieldset-mailing-address div.field.field-zip input{
   min-width: 10em;
 }
 
+
+.field-naics input {
+    margin-bottom: 8px;
+}
+.field-naics input:last-child{ margin-bottom: 0;}
+
+span.naics-description {
+    margin-left: 8px;
+    font-size: 14px;
+  width: 33%;
+}
+
+
+.field-overhead input,
+.field-year input,
+.field-number input,
+.field-int input,
+.field-integer input,
+.field-float input,
+.field-fringe-benefits input,
+.field-dollars input,
+.field-calculated input,
+.field-timespan input,
+.field-percentage input,
+.field-proposed-cost input,
+.field-proposed-dta-amount input,
+.field-contract-number input,
+.field-short_str input,
+.field-naics input,
+.field-zip input,
 .field-phone input,
 .field-fax input,
 .field-rate input,
 .field-estimated-hours input,
 .field-overhead input,
-.field-year input,
-.field-number input,
-.field-fringe-benefits input,
-.field-proposed-cost input,
-.field-proposed-dta-amount input,
-.field-contract-number input,
 .field-num-phase-2-awards input{
 	width: 33%;
 }
@@ -556,7 +587,6 @@ fieldset.fieldset-mailing-address div.field.field-zip input{
 .field-fax-number input{
 	width: 10em;
 }
-
 
 .field-number-short input{ width: 2em; }
 
@@ -601,12 +631,14 @@ main div.wrap > form { max-width: 576px; }
 
 @media screen and (min-width: 640px) {
    body.company main div.wrap > form,
-   body.proposal main div.wrap > form {
+   body.proposal main div.wrap > form,
+   .proposal-details main div.wrap > form {
 		padding-right: 16px;
 		border-right: 1px solid #eee;
 	}
 	
-   body.proposal main div.wrap > form {
+   body.proposal form,
+   .proposal-details main div.wrap > form {
 		margin-right: 224px;
    }
 	
@@ -620,11 +652,6 @@ main form footer{
 	position: relative;
 }
 
-main form footer a{
-	position: absolute;
-	right: 0;
-	top: 12px;
-}
 
 main form footer a:hover{ color: #333; }
 main form footer p{
@@ -633,7 +660,8 @@ main form footer p{
 	font-style: italic;
 	color: #888;
 	background: #f3f3f3;
-	padding: 12px;
+	padding: 12px 16px;
+	margin: 24px -16px -16px;
 	max-width: none;
 	margin-top: 24px;
 	font-size: 14px;
@@ -913,7 +941,7 @@ header.banner form div.field input {
 .topic.is-favorite h1{ color: #b03a00; }
 
 @media screen and (min-width: 711.11px) {
-	.topic{
+	article.topic{
 		padding-right: 208px;
 		position: relative;
 	}
@@ -1128,19 +1156,23 @@ body.home main form{
 body.home main form div.field input[type=text],
 body.home main form div.field input[type=search]{ 
 	border: none; 
-	height: 38px;
-	padding: 0;
 }
 
-body.home main form button{
+body.home main form footer{ 
+	padding: 0;
+	margin: 0;
+	position: static; 
+}
+body.home main form .button{
 	color: white;
 	width: 84px;
 	position: absolute;
 	right: 0;
 	top: 0;
+	margin: 0;
 }
 
-body.home main form button:hover{
+body.home main form .button:hover{
 	box-shadow: none;
 	border-color: yellow;
 	color: yellow;
@@ -1167,13 +1199,15 @@ body.home main form{ border: none; }
 /* @group body.proposal-cost-volume */
 
 .labor-related-costs,
-.direct-material-costs{ 
+.direct-material-costs,
+.dynamic-items{ 
 	margin-bottom: 24px; 
 	position: relative;
 }
 
 .labor-related-costs h1,
-.direct-material-costs h1{
+.direct-material-costs h1,
+.dynamic-items h1{
 	display: inline-block;
 	vertical-align: middle;
 	font: inherit;
@@ -1184,10 +1218,16 @@ body.home main form{ border: none; }
 }
 
 .labor-related-costs .labor-related-cost:first-of-type,
-.direct-material-costs .direct-material-cost:first-of-type{
+.direct-material-costs .direct-material-cost:first-of-type,
+.dynamic-items .dynamic-item:first-of-type{
 	margin-top: 2em;
-	
 }
+
+.labor-related-cost+.labor-related-cost,
+.direct-material-cost+.direct-material-cost,
+.dynamic-item+.dynamic-item{ margin-top: 36px; }
+
+.dynamic-items  .dynamic-items-add,
 .labor-related-costs  .labor-related-costs-add,
 .direct-material-costs .direct-material-costs-add{
 	background: none;
@@ -1203,6 +1243,7 @@ body.home main form{ border: none; }
 	border-radius: 3px;
 }
 
+.dynamic-items  .dynamic-items-add:hover,
 .labor-related-costs  .labor-related-costs-add:hover,
 .direct-material-costs .direct-material-costs-add:hover {
 	background: #cb4d00;
@@ -1210,6 +1251,7 @@ body.home main form{ border: none; }
 	color: white;
 }
 
+.dynamic-items  .dynamic-items-add:active,
 .labor-related-costs  .labor-related-costs-add:active,
 .direct-material-costs .direct-material-costs-add:active {
 	color: #c6bb96;
@@ -1217,6 +1259,7 @@ body.home main form{ border: none; }
 	border-color: #7e2000;
 }
 
+.dynamic-item a.dynamic-item-remove,
 .direct-material-cost a.direct-material-cost-remove{
 	position: absolute;
 	right: 16px;
@@ -1227,6 +1270,7 @@ body.home main form{ border: none; }
 	
 }
 
+.dynamic-item a.dynamic-item-remove:hover,
 .direct-material-cost a.direct-material-cost-remove:hover{
 	background: #cc1602; 
 	color: white;
@@ -1241,17 +1285,23 @@ body.home main form{ border: none; }
 /* @group header */
 
 
-header.proposal-banner,
-header.company-banner{
+header.proposal-header,
+header.company-header{
 	background: #eee;
 	line-height: 24px;
 	color: #555;
 	padding-top: 8px;
 	padding-bottom: 8px;
+	display: block;
+	white-space: nowrap;
 }
 
-header.proposal-banner a{color: #555; } 
-header.proposal-banner a:hover{color: #333; }
+header.proposal-header h1{
+	overflow: hidden;
+	text-overflow: ellipsis;	
+}
+header.proposal-header a{color: #555; } 
+header.proposal-header a:hover{color: #333; }
 
 /* @end */
 
@@ -1412,6 +1462,7 @@ body.sign-in main h1,
 body.sign-up main h1,
 body.sign-up-post main h1{
 	margin-top: 0;
+	padding-top: 0;
 	margin-bottom: 24px;
 	color: #b03a00;
 }
@@ -1422,6 +1473,13 @@ body.sign-up-post footer {
 	padding-bottom: 0; 
 	margin-top: 28px;
 }
+
+a.sign-in-reset{
+	position: absolute;
+	right: 0;
+	top: 12px;
+}
+
 
 body.sign-up-post main h1{
 	margin-top: 0;
@@ -1451,6 +1509,13 @@ body.sign-up p#password-instructions{
 	}
 	
 	body.sign-up-post main div.wrap{ max-width: 512px; }
+	
+	body.sign-in main form footer p,
+	body.sign-up main form footer p,
+	body.sign-up-post main form footer p {
+	margin: 16px -24px -24px;
+	}
+
 }
 
 
@@ -1459,12 +1524,20 @@ body.sign-up p#password-instructions{
 
 /* @group body.topic-show */
 
-.topic-show main nav{ margin-top: 1em; }
-.topic-show main nav form{
-	display: inline;	
+.topic-show .topic .topic-nav{ margin-top: 1em; }
+.topic-show .topic topic-nav form{ display: inline;	}
+
+.topic-show .topic {
+	padding: 0 0 2em;
+	margin: 0;
+	border: none;
 }
 
-.topic-show h1{
+.topic-show .topic h1{ font-size: 18px; }
+
+.topic-show .topic .topic-header{ margin-bottom: 1.67em;}
+
+.topic-show .topic-header h1{
 	font-size: 24px;
 	line-height: 1.2em;
 	font-family: Georgia, serif;
@@ -1472,19 +1545,8 @@ body.sign-up p#password-instructions{
 	margin-bottom: 0.4em;
 }
 
-@media screen and (min-width: 711.11px) { .topic-show h1{ font-size: 28px; } }
+@media screen and (min-width: 711.11px) { .topic-show .topic .topic-header h1{ font-size: 28px; } }
 
-.topic-show h2{
-	display: inline-block;
-	vertical-align: middle;
-	color: #666;
-	background: #eee;
-	font-size: 0.8em;
-	padding: 0.3em 0.5em;
-	border-radius: 3px;
-	position: relative;
-	top: -0.2em;
-}
 
 .topic-show div.wrap header h1{ max-width: 24em; }
 
@@ -1492,7 +1554,9 @@ body.sign-up p#password-instructions{
 	font: inherit;
 	font-size: 18px;
 	font-weight: 600;
-	color: #107b7b;
+	color: #555;
+	margin-top: 0.33em;
+	margin-bottom: 0.67em;
 }
 
 .topic-show main section p{ margin-bottom: 1em; }
@@ -1500,19 +1564,19 @@ body.sign-up p#password-instructions{
 
 
 @media screen and (min-width: 711.11px) {
-	.topic-show div.wrap header{
+	.topic-show .topic .topic-header{
 		padding-right: 208px;
 		position: relative;
 	}
 	
-	.topic-show div.wrap nav{
+	.topic-show .topic .topic-nav{
 		position: absolute;
 		right: 0;
 		top: 0;
 		width: 192px;
 	}
 
-	.topic-show form{ display: block; }
+	.topic .topic-nav form{ display: block; }
 	
 }
 
@@ -1537,7 +1601,7 @@ body.sign-up p#password-instructions{
 		aside.form-nav{
 			border: none;
 			position: absolute;
-			top: 32px;
+			top: 41px;
 			right: 0;
 			padding: 0 0 0 16px;
 			margin: 0;
@@ -1551,14 +1615,17 @@ body.sign-up p#password-instructions{
 		font-family: Georgia;
 		letter-spacing: 0.125em;
 		word-spacing: 0.15em;
-		color: #555;
+		color: #333;
 		margin-bottom: 20px;
 	}
 	
 	aside.form-nav nav.toc,
 	aside.form-nav a{
 		color: #555;
+		text-decoration: none;
 	}
+	
+	aside.form-nav a:hover{ text-decoration: underline; }
 	
 	
 	aside.form-nav nav.toc ol li ol{ 
@@ -1621,7 +1688,8 @@ body.sign-up p#password-instructions{
 	  	  .proposal-cost-volume aside.form-nav nav.toc 
 	li.toc-proposal-cost-volume a,
 	  	  .proposal-company-commercialization-report aside.form-nav nav.toc 
-	li.toc-proposal-company-commercialization-report a{
+	li.toc-proposal-company-commercialization-report a,
+	nav.toc .is-current{
 		font-weight: 600;
 		text-decoration: none;	
 	}
@@ -1683,7 +1751,9 @@ body.sign-up p#password-instructions{
 
 body .bigfoot-footnote__content { padding: 14px; }
 
-body .bigfoot-footnote__content p{
+body .bigfoot-footnote__content p,
+body .bigfoot-footnote__content ol,
+body .bigfoot-footnote__content ul{
 	font-size: 14px;
 	line-height: 1.33;
 	color: #333;
@@ -1693,8 +1763,8 @@ body .bigfoot-footnote__button {
   padding: 0;
   border-radius: 99em;
   margin: 0 0 0 0.4em;
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
   font-family: Arial;
   font-size: 10px;
   font-weight: 600;

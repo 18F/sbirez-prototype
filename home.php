@@ -15,7 +15,9 @@
               <input type="search" id="query" name="query" ng-model="query" value="" class="ng-pristine ng-untouched ng-valid" tabindex="0" aria-invalid="false">
             </label>
           </div>
-          <button type="submit">Search</button>
+          <footer>
+            <input class="button" type="submit" value="Search">
+          </footer>
         </form>
       </div>
     </main>

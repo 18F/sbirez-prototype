@@ -1,17 +1,13 @@
-/* @override http://localhost:4000/stylesheets/styles.css */
+/* @override http://127.0.0.1:4000/stylesheets/styles.css */
 
-/* @override http://localhost:4000/stylesheets/styles.css */
+/* @override http://127.0.0.1:4000/stylesheets/styles.css */
 
-/* @override http://localhost:4000/stylesheets/styles.css */
-
-/* @override http://localhost:4000/stylesheets/styles.css */
+/* @override http://127.0.0.1:4000/stylesheets/styles.css */
 
 /* @group bootstrap */
 
-
-
 body{
-	font-family: helvetica neue, helvetica, sans-serif;
+	font-family: Arial, helvetica neue, helvetica, sans-serif;
 	font-size: 16px;
 	color: #333;
 }
@@ -19,6 +15,7 @@ body{
 a{ color: #0064be; }
 a:hover{ color: #003c72; }
 
+a.skip-nav{ position: absolute; left: -9999em; }
 a.a-return{ 
 	color: #666; 
 	font-size: 14px;
@@ -42,13 +39,6 @@ a.a-return::before{
 }
 a.a-return:hover{ color: #333; }
 a.a-return:hover::before{ color: #444; background: #eee;}
-
-
-
-
-
-@media screen and (min-width: 768.88px) {
-}
 
 p, li, dd, dt {
 	line-height: 1.4em;
@@ -85,6 +75,8 @@ div.wrap{
 	max-width: 800px;
 	margin: 0 auto;
 	position: relative;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 }
 
 div.wrap::after{
@@ -101,6 +93,7 @@ h1.primary-header {
 	margin-top: 24px;
 	margin-bottom: 0.6em;
 	margin-left: -0.03em;
+	color: #333;
 }
 
 @media screen and (min-width: 711.11px) { 
@@ -148,23 +141,53 @@ summary.error-message{
 	margin-top: -8px;
 }
 
-summary.error-message details{ margin-top: 8px; }
-summary.error-message details p:first-of-type{ margin-top: 8px; }
-summary.error-message details ol{
+summary.error-message { margin-top: 8px; }
+summary.error-message p:first-of-type{ margin-top: 8px; }
+summary.error-message ol{
 	list-style-type: decimal;
 	margin: 0 0 0 1.4em;
-	padding-top: 0;
 }
 
-summary.error-message details ol li{
+summary.error-message ol li{
 	margin-bottom: 6px;
+}
+
+@media screen and (min-width: 568.88px) {
+	summary.error-message{
+		padding: 16px;
+	}
 }
 
 /* @end */
 
-label { display: block; }
+legend {
+  padding: 0;
+  display: table;
+}
 
+fieldset {
+  border: 0;
+  padding: 0.01em 0 0 0;
+  margin: 0;
+  min-width: 0;
+}
+
+body:not(:-moz-handler-blocked) fieldset {
+  display: table-cell;
+}
+
+fieldset > legend,
+.field span.label-text{
+	display: block;	
+	max-width: 40em;
+	margin: 0 0 8px;
+	padding: 0;
+	position: static;
+	font: inherit;
+	line-height: 20px;
+}
 input[type=text],
+input[type=date],
 input[type=email],
 input[type=number],
 input[type=password],
@@ -194,19 +217,29 @@ textarea{
 
 .field-select span.label-select{ 
 	position: relative; 
-	width: 15%;
+	width: 33%;
 	display: block;
 }
+
+.field-select{ position: relative; }
 
 .field-select span.label-select::after{
 	content: "";
 	border: 6px solid black;
 	position: absolute;
-	right: 8px;
-	bottom: 10px;
+	right: 20px;
+	bottom: 50%;
+	margin-bottom: 2px;
 	border-color: #aaa transparent transparent transparent;
 	z-index: -1;
 }
+
+.field-select span.label-select::after{
+	right: 12px;
+	margin-bottom: -9px;	
+}
+
+.field-total-revenue::after{ display: none; }
 
 .field-select:hover select{ border-color: #aaa; }
 .field-select:hover::after{ border-top-color: #888; }
@@ -224,7 +257,7 @@ button,
 	border: 1px solid;
 	color: #008c52;
 	font: inherit;
-	padding: 10px 12px;
+	padding: 9px 12px;
 	margin: 0;
 	line-height: 16px;	
 	cursor: pointer;
@@ -263,14 +296,20 @@ button.button-remove:active{
 
 form > h1,
 body.sign-up-post main h1,
-.fieldset-labor-related-costs > header > h1,
-.fieldset-direct-material-costs > header > h1 {
+.labor-related-costs > h1,
+.direct-material-costs > h1 {
 	margin-top: 32px;
 	margin-bottom: 16px;
-	font-size: 28px;
+	font-size: 24px;
 	line-height: 32px;
-	color: #444;
+	color: #107b7b;
 	font-family: Georgia;
+}
+
+form > h1:first-of-type{
+	margin-top: 0;
+	padding-top: 32px;
+	
 }
 
 form a.a-return + h1{
@@ -279,28 +318,41 @@ form a.a-return + h1{
 
 div.field,
 section.fieldset,
-section.fieldset.fieldset-radio{ margin-bottom: 24px; }
+.fieldset-radio{ margin-bottom: 24px; }
 
-div.field+section.fieldset{ margin-top: 32px; }
+div.field+section.fieldset,
+div.field+fieldset,
+fieldset.fieldset-checkbox{ margin-top: 36px; }
 
-section.fieldset{
+fieldset.fieldset-principal-investigator,
+fieldset.fieldset-corporate-official,
+fieldset.fieldset-point-of-contact,
+fieldset.fieldset-contact-information,
+fieldset.fieldset-checkbox,
+fieldset.labor-related-cost,
+fieldset.direct-material-cost{
 	border: 1px solid #cfcfcf;
 	padding: 20px 16px 16px;
 	position: relative;
-	margin-bottom: 20px;
+	margin-bottom: 24px;
 	border-radius: 4px;
 }
 
-.fieldset+.fieldset:not(.fieldset-radio){ margin-top: 32px; }
+fieldset.fieldset-corporate-official{ margin-bottom: 24px; }
 
-.fieldset-principal-investigator .fieldset:last-of-type,
-.fieldset-labor-related-cost .field:last-of-type,
-.fieldset-direct-material-cost .field:last-of-type{
-	margin-bottom: 2px;
+.fieldset-principal-investigator fieldset:last-of-type,
+.labor-related-cost .field:last-of-type,
+.direct-material-cost .field:last-of-type{
+	margin-bottom: 0;
 }
 
-section.fieldset > h1,
-section.fieldset > header > h1{
+fieldset.fieldset-principal-investigator > legend,
+fieldset.fieldset-corporate-official > legend,
+fieldset.fieldset-point-of-contact > legend,
+fieldset.fieldset-contact-information > legend,
+fieldset.fieldset-checkbox > legend,
+fieldset.labor-related-cost > legend,
+fieldset.direct-material-cost > legend{
 	position: absolute;
 	background: white;
 	margin: 0 0 -3px;
@@ -313,6 +365,7 @@ section.fieldset > header > h1{
 	color: #777;
 }
 
+fieldset.fieldset-point-of-contact,
 section.fieldset div.field:last-of-type+section.fieldset{
 	margin-top: 24px;
 }
@@ -327,9 +380,11 @@ section.fieldset div.field:last-of-type+section.fieldset{
 	border: none;
 }
 
+.fieldset-discretionary-technical-assistance > legend,
 .fieldset.fieldset-equivalent-work-detail > h1,
 .fieldset.fieldset-phase-2 > h1{ display: none; }
 
+.fieldset-radio > legend,
 section.fieldset.fieldset-radio > h1,
 div.field span.label-text{
 	display: block;	
@@ -347,21 +402,23 @@ div.field.field-radio{
 	vertical-align: middle;
 	margin-bottom: 0;
 }
+
 div.field.field-radio label{
 	display: inline-block;
-	padding: 0 12px 4px 12px;
+	padding: 0 12px 2px 12px;
 	border: 1px solid #ccc;
 	min-height: 32px;
 	line-height: 32px;
 	vertical-align: middle;
 }
 
-main div.field input:focus,
-main div.field textarea:focus,
-main div.field.field-checkbox.is-focused label,
-main div.field.field-radio.is-focused label{
-	background: #fff2df;
-	border-color: goldenrod;
+.field input:focus,
+.field select:focus,
+.field textarea:focus,
+.field.field-checkbox.is-focused label,
+.field.field-radio.is-focused label{
+	border-color: #1188ff;
+	box-shadow: 0 0 0 1px rgba(17,136,255,0.15);
 	outline: none;
 }
 
@@ -422,36 +479,51 @@ section.fieldset.fieldset-radio.is-error span.error-message{
 	font-style: italic;	
 }
 
-section.fieldset.fieldset-address div.field-city-state-zip::after{
+
+fieldset.fieldset-mailing-address div.field{
+	padding-bottom: 1.4em;
+	position: relative;
+}
+
+fieldset.fieldset-mailing-address .label-select{ width: 100%; }
+
+fieldset.fieldset-mailing-address div.field span.label-text{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	font-size: 12px;
+}
+
+fieldset.fieldset-mailing-address div.field-city-state-zip::after{
 	content: "";
 	display: table;
 	clear: both;
 }
 
-section.fieldset.fieldset-address div.field-city-state-zip{
-	margin-right: -0.67em;
+fieldset.fieldset-mailing-address div.field-city-state-zip{
+	margin-right: -0.7em;
 	margin-bottom: 0;
 }
 
-section.fieldset.fieldset-address div.field.field-city,
-section.fieldset.fieldset-address div.field.field-state,
-section.fieldset.fieldset-address div.field.field-zip{
+fieldset.fieldset-mailing-address div.field.field-city,
+fieldset.fieldset-mailing-address div.field.field-state,
+fieldset.fieldset-mailing-address div.field.field-zip{
 	float: left;
 	width: 25%;
 	padding-right: 0.67em; 
+	margin-bottom: 0;
 }
 
-section.fieldset.fieldset-address div.field.field-city{ 
+fieldset.fieldset-mailing-address div.field.field-city{ 
 	width: 50%; 
 }
 
-
-section.fieldset.fieldset-address div.field.field-city input,
-section.fieldset.fieldset-address div.field.field-state input,
-section.fieldset.fieldset-address div.field.field-zip input{
+fieldset.fieldset-mailing-address div.field.field-city input,
+fieldset.fieldset-mailing-address div.field.field-state input,
+fieldset.fieldset-mailing-address div.field.field-zip input{
 	min-width: 0;
 }
-
 
 
 /* @group widths */
@@ -497,14 +569,14 @@ section.fieldset.fieldset-address div.field.field-zip input{
 /* @end */
 
 
-.is-branch{
+.branch{
 	padding: 8px 0 0 12px !important;
 	margin-top: -12px !important;
 	position: relative;
 	border: none !important;
 }
 
-.is-branch::after{
+.branch::after{
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -515,6 +587,22 @@ section.fieldset.fieldset-address div.field.field-zip input{
 	background: #e3e3e3;
 }
 
+.branch > h1.branch-logic,
+.branch > header > h1.branch-logic{
+	text-transform: uppercase;
+	font: 13px Courier, mono !important;
+	font-weight: 600 !important;
+	padding: 4px;
+	background: #eee;
+	display: inline-block;
+	color: #ed2766 !important;
+	border-radius: 2px;
+	border: 1px solid #ccc;
+	margin-top: 0;
+	margin-bottom: 8px !important;
+}
+
+
 main div.wrap > form { max-width: 576px; }
 
 @media screen and (min-width: 640px) {
@@ -524,7 +612,7 @@ main div.wrap > form { max-width: 576px; }
 		border-right: 1px solid #eee;
 	}
 	
-   body.proposal main div.wrap > form {
+   body.proposal form.proposal-form {
 		margin-right: 224px;
    }
 	
@@ -538,11 +626,6 @@ main form footer{
 	position: relative;
 }
 
-main form footer a{
-	position: absolute;
-	right: 0;
-	top: 12px;
-}
 
 main form footer a:hover{ color: #333; }
 main form footer p{
@@ -551,7 +634,8 @@ main form footer p{
 	font-style: italic;
 	color: #888;
 	background: #f3f3f3;
-	padding: 12px;
+	padding: 12px 16px;
+	margin: 24px -16px -16px;
 	max-width: none;
 	margin-top: 24px;
 	font-size: 14px;
@@ -748,30 +832,30 @@ header.banner form div.field input {
 
 /* @end */
 
-/* @group article.topic */
+/* @group .topic */
 
-article.topic{
+.topic{
 	margin-bottom: 1em;
 	padding-bottom: 1em;
 	border-bottom: 1px solid #eee;
 	color: #333;
 }
 
-article.topic p{ margin-bottom: 0; }
+.topic p{ margin-bottom: 0; }
 
-article.topic a.topic-content{
+.topic .topic-content{
 	display: block;
 	text-decoration: none;
 	color: inherit;
 }
 
-article.topic a.topic-content:hover h1{
+.topic .topic-content:hover h1{
 	text-decoration: underline;
 }
 
-article.topic h1{
+.topic h1{
 	font-family: georgia;
-	font-size: 21px;
+	font-size: 20px;
 	line-height: 24px;
 	font-weight: 100;
 	display: inline-block;
@@ -782,7 +866,7 @@ article.topic h1{
 	margin-right: 0.4em;
 }
 
-article.topic h2{
+.topic h2{
 	display: inline-block;
 	vertical-align: middle;
 	color: #666;
@@ -794,17 +878,17 @@ article.topic h2{
 	top: -0.2em;
 }
 
-article.topic form{
+.topic form{
 	display: inline-block;
 	vertical-align: middle;
 	padding: 0;
 	border: none;
 }
 
-article.topic nav{ padding-top: 0.4em; }
+.topic .topic-nav{ padding-top: 0.4em; }
 
-article.topic nav a,
-article.topic nav button{
+.topic .topic-nav a,
+.topic .topic-nav button{
 	background: none;
 	border: none;
 	color: #0064be;
@@ -821,20 +905,14 @@ article.topic nav button{
 	box-shadow: none;
 }
 
-article.topic nav a:hover,
-article.topic nav button:hover{ 
+.topic .topic-nav a:hover,
+.topic .topic-nav button:hover{ 
 	color: #032353; 
 	border-color: inherit;
 	text-decoration: none;
 }
 
-/* @group is-favorite */
-
-article.topic.is-favorite h1{
-	color: #b03a00;
-}
-
-/* @end */
+.topic.is-favorite h1{ color: #b03a00; }
 
 @media screen and (min-width: 711.11px) {
 	article.topic{
@@ -842,17 +920,17 @@ article.topic.is-favorite h1{
 		position: relative;
 	}
 	
-	article.topic nav{
+	.topic .topic-nav{
 		position: absolute;
 		right: 0;
 		top: 0;
 		width: 192px;
 	}
 
-	article.topic nav form{ display: block; }
+	.topic .topic-nav form{ display: block; }
 
-	article.topic nav a,
-	article.topic nav button{
+	.topic .topic-nav a,
+	.topic .topic-nav button{
 		display: block;
 		width: 100%;
 		padding: 0.4em 0;
@@ -860,8 +938,8 @@ article.topic.is-favorite h1{
 		border-bottom: 1px solid #eee !important;
 	}
 	
-	article.topic nav a:hover,
-	article.topic nav button:hover{
+	.topic .topic-nav a:hover,
+	.topic .topic-nav button:hover{
 		background: #f8f8f8;
 		cursor: pointer;
 	}
@@ -873,33 +951,66 @@ article.topic.is-favorite h1{
 /* @group nav.pagination */
 
 nav.pagination{
-	margin-top: 3em;
 	position: relative;
-	padding-top: 1em;
-	padding-right: 5em;
-	padding-left: 6em;
-	text-align: center;
+	padding-left: 72px;
 	line-height: 1.3;
-	color: #555;
-	border-top: 3px solid #eee;
-	font-size: 14px;
+	font-size: 16px;
+	color: #333;
 	margin-bottom: 2em;
 }
-
-nav.pagination span.showing-results{ display: block; }
-@media screen and (min-width: 466.66px) { nav.pagination span.showing-results{ display: inline; } }
 
 nav.pagination a.pagination-prev,
 nav.pagination a.pagination-next{
 	position: absolute;
+	color: inherit;
 	left: 0;
-	top: 1em;
+	top: -2px;
+	width: 28px;
+	height: 24px;
+	border: 1px solid #555;
+	border-bottom-color: #333;
+	text-indent: -9999em;
+}
+
+nav.pagination a.pagination-prev::after,
+nav.pagination a.pagination-next::after{
+	content: "";
+	border: 6px solid black;
+	position: absolute;
+	right: 50%;
+	bottom: 50%;
+	margin-bottom: -6px;
+	margin-right: -2px;
+	border-color: transparent #777 transparent transparent;
+	z-index: -1;
+}
+
+nav.pagination a.pagination-next::after{
+	border-color: transparent transparent transparent #777;
+	margin-right: -10px;
+}
+
+nav.pagination a.pagination-prev{
+	border-radius: 3px 0 0 3px;
 }
 
 nav.pagination a.pagination-next{
-	left: auto;
+	border-radius: 0 3px 3px 0;
+	left: 28px;
 	right: 0;
+	border-left: none;
 }
+
+nav.pagination a.pagination-prev:active,
+nav.pagination a.pagination-next:active{ background: #eee; }
+
+nav.pagination a.pagination-prev:active::after,
+nav.pagination a.pagination-next:active::after{
+	z-index: 1;
+}
+
+nav.pagination a.pagination-prev:active::after{ border-right-color: #444; }
+nav.pagination a.pagination-next:active::after{ border-left-color: #444; }
 
 
 
@@ -999,10 +1110,11 @@ body.company h1.primary-header{
 /* @group body.home */
 
 body.home{
-	background-color: #12355d;
+	background-color: #2e3a47;
 	color: white;
 }
 
+body.home main h1{ color: white; }
 body.home header.banner{ margin-bottom: 24px; }
 body.home header.banner form{ display: none; }
 body.home main form div.field span.label-text{
@@ -1018,19 +1130,23 @@ body.home main form{
 body.home main form div.field input[type=text],
 body.home main form div.field input[type=search]{ 
 	border: none; 
-	height: 38px;
-	padding: 0;
 }
 
-body.home main form button{
+body.home main form footer{ 
+	padding: 0;
+	margin: 0;
+	position: static; 
+}
+body.home main form .button{
 	color: white;
 	width: 84px;
 	position: absolute;
 	right: 0;
 	top: 0;
+	margin: 0;
 }
 
-body.home main form button:hover{
+body.home main form .button:hover{
 	box-shadow: none;
 	border-color: yellow;
 	color: yellow;
@@ -1056,25 +1172,30 @@ body.home main form{ border: none; }
 
 /* @group body.proposal-cost-volume */
 
-section.fieldset-labor-related-costs > header,
-section.fieldset-direct-material-costs > header{
-	margin-bottom: 24px;
+.labor-related-costs,
+.direct-material-costs{ 
+	margin-bottom: 24px; 
+	position: relative;
 }
 
-section.fieldset-labor-related-costs > header h1,
-section.fieldset-direct-material-costs > header h1{
+.labor-related-costs h1,
+.direct-material-costs h1{
 	display: inline-block;
 	vertical-align: middle;
 	font: inherit;
 	color: #555;
 	font-size: 21px;
-	line-height: 16px;
 	margin: 0;
 	position: static;
 }
 
-section.fieldset-labor-related-costs > header a,
-section.fieldset-direct-material-costs > header a{
+.labor-related-costs .labor-related-cost:first-of-type,
+.direct-material-costs .direct-material-cost:first-of-type{
+	margin-top: 2em;
+	
+}
+.labor-related-costs  .labor-related-costs-add,
+.direct-material-costs .direct-material-costs-add{
 	background: none;
 	border: 1px solid;
 	color: #a50;
@@ -1083,28 +1204,26 @@ section.fieldset-direct-material-costs > header a{
 	font-size: 14px;
 	margin: 4px 0 0 0.4em;
 	cursor: pointer;
-	text-decoration: none;
 	display: inline-block;
-	vertical-align: middle;
-	position: relative;
+	text-decoration: none;
 	border-radius: 3px;
 }
 
-section.fieldset-labor-related-costs > header a:hover,
-section.fieldset-direct-material-costs > header a:hover {
+.labor-related-costs  .labor-related-costs-add:hover,
+.direct-material-costs .direct-material-costs-add:hover {
 	background: #cb4d00;
 	border-color: #cb4d00;
 	color: white;
 }
 
-section.fieldset-labor-related-costs > header a:active,
-section.fieldset-direct-material-costs > header a:active {
+.labor-related-costs  .labor-related-costs-add:active,
+.direct-material-costs .direct-material-costs-add:active {
 	color: #c6bb96;
 	background: #7e2000;
 	border-color: #7e2000;
 }
 
-section.fieldset-direct-material-costs section.fieldset-direct-material-cost a.remove{
+.direct-material-cost a.direct-material-cost-remove{
 	position: absolute;
 	right: 16px;
 	font-size: 14px;
@@ -1114,7 +1233,7 @@ section.fieldset-direct-material-costs section.fieldset-direct-material-cost a.r
 	
 }
 
-section.fieldset-direct-material-costs section.fieldset-direct-material-cost a.remove:hover{
+.direct-material-cost a.direct-material-cost-remove:hover{
 	background: #cc1602; 
 	color: white;
 	text-decoration: none;
@@ -1128,17 +1247,23 @@ section.fieldset-direct-material-costs section.fieldset-direct-material-cost a.r
 /* @group header */
 
 
-header.proposal-banner,
-header.company-banner{
+header.proposal-header,
+header.company-header{
 	background: #eee;
 	line-height: 24px;
 	color: #555;
 	padding-top: 8px;
 	padding-bottom: 8px;
+	display: block;
+	white-space: nowrap;
 }
 
-header.proposal-banner a{color: #555; } 
-header.proposal-banner a:hover{color: #333; }
+header.proposal-header h1{
+	overflow: hidden;
+	text-overflow: ellipsis;	
+}
+header.proposal-header a{color: #555; } 
+header.proposal-header a:hover{color: #333; }
 
 /* @end */
 
@@ -1242,6 +1367,17 @@ footer.proposal-footer div.wrap{
 
 /* @end */
 
+/* @group body.company-commercialization-report */
+
+body.proposal.proposal-company-commercialization-report fieldset.fieldset-contact-information{
+	margin-top: 32px;
+}
+
+
+
+/* @end */
+
+
 
 
 /* @group body.no-results */
@@ -1288,6 +1424,7 @@ body.sign-in main h1,
 body.sign-up main h1,
 body.sign-up-post main h1{
 	margin-top: 0;
+	padding-top: 0;
 	margin-bottom: 24px;
 	color: #b03a00;
 }
@@ -1298,6 +1435,13 @@ body.sign-up-post footer {
 	padding-bottom: 0; 
 	margin-top: 28px;
 }
+
+a.sign-in-reset{
+	position: absolute;
+	right: 0;
+	top: 12px;
+}
+
 
 body.sign-up-post main h1{
 	margin-top: 0;
@@ -1327,20 +1471,35 @@ body.sign-up p#password-instructions{
 	}
 	
 	body.sign-up-post main div.wrap{ max-width: 512px; }
+	
+	body.sign-in main form footer p,
+	body.sign-up main form footer p,
+	body.sign-up-post main form footer p {
+	margin: 16px -24px -24px;
+	}
+
 }
 
 
 
 /* @end */
 
-/* @group body.topic */
+/* @group body.topic-show */
 
-body.topic main nav{ margin-top: 1em; }
-body.topic main nav form{
-	display: inline;	
+.topic-show .topic .topic-nav{ margin-top: 1em; }
+.topic-show .topic topic-nav form{ display: inline;	}
+
+.topic-show .topic {
+	padding: 0 0 2em;
+	margin: 0;
+	border: none;
 }
 
-body.topic main h1{
+.topic-show .topic h1{ font-size: 18px; }
+
+.topic-show .topic .topic-header{ margin-bottom: 1.67em;}
+
+.topic-show .topic-header h1{
 	font-size: 24px;
 	line-height: 1.2em;
 	font-family: Georgia, serif;
@@ -1348,48 +1507,36 @@ body.topic main h1{
 	margin-bottom: 0.4em;
 }
 
-@media screen and (min-width: 711.11px) { body.topic main h1{ font-size: 28px; } }
+@media screen and (min-width: 711.11px) { .topic-show .topic .topic-header h1{ font-size: 28px; } }
 
-body.topic main h2{
-	display: inline-block;
-	vertical-align: middle;
-	color: #666;
-	background: #eee;
-	font-size: 0.8em;
-	padding: 0.3em 0.5em;
-	border-radius: 3px;
-	position: relative;
-	top: -0.2em;
-}
 
-body.topic main div.wrap header h1{ max-width: 24em; }
+.topic-show div.wrap header h1{ max-width: 24em; }
 
-body.topic main section h1{
+.topic-show section h1{
 	font: inherit;
 	font-size: 18px;
 	font-weight: 600;
 	color: #107b7b;
 }
 
-body.topic main section p{ margin-bottom: 1em; }
+.topic-show main section p{ margin-bottom: 1em; }
 
 
 
 @media screen and (min-width: 711.11px) {
-	body.topic main div.wrap header{
+	.topic-show .topic .topic-header{
 		padding-right: 208px;
 		position: relative;
 	}
 	
-		body.topic main div.wrap nav{
+	.topic-show .topic .topic-nav{
 		position: absolute;
 		right: 0;
 		top: 0;
 		width: 192px;
 	}
 
-	body.topic main div.wrap form{ display: block; }
-
+	.topic .topic-nav form{ display: block; }
 	
 }
 
@@ -1397,8 +1544,6 @@ body.topic main section p{ margin-bottom: 1em; }
 /* @end */
 
 /* @group body.proposal */
-
-
 
 /* @group aside.form-nav */
 
@@ -1408,7 +1553,7 @@ body.topic main section p{ margin-bottom: 1em; }
 		width: 224px;
 		border: 1px solid #aaa;
 		padding: 12px;
-		margin-bottom: 16px;
+		margin-top: 24px;
 		border-radius: 5px;
 	}
 	
@@ -1500,7 +1645,8 @@ body.topic main section p{ margin-bottom: 1em; }
 	  	  .proposal-cost-volume aside.form-nav nav.toc 
 	li.toc-proposal-cost-volume a,
 	  	  .proposal-company-commercialization-report aside.form-nav nav.toc 
-	li.toc-proposal-company-commercialization-report a{
+	li.toc-proposal-company-commercialization-report a,
+	nav.toc .is-current{
 		font-weight: 600;
 		text-decoration: none;	
 	}
@@ -1560,29 +1706,44 @@ body.topic main section p{ margin-bottom: 1em; }
 
 /* @group bigfoot */
 
+body .bigfoot-footnote__content { padding: 14px; }
+
+body .bigfoot-footnote__content p,
+body .bigfoot-footnote__content ol,
+body .bigfoot-footnote__content ul{
+	font-size: 14px;
+	line-height: 1.33;
+	color: #333;
+}
+
 body .bigfoot-footnote__button {
   padding: 0;
   border-radius: 99em;
   margin: 0 0 0 0.4em;
-  width: 20px;
-  height: 20px;
-  font-size: 14px;
-  line-height: 19px;
-  border: 1px solid #ccc;
-  color: #555;
-  background: #eee;
+  width: 14px;
+  height: 14px;
+  font-family: Arial;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 12px;
+  border: 1px solid #ffce98;
+  color: #924100;
+  background: #ffeac3;
   transition: none;
 }
 
 body .bigfoot-footnote__button:hover,
 body .bigfoot-footnote__button:focus{
-	background: #ddd;
-	color: #333;
+	background: #fff2c8;
+	  border: 1px solid #ffce98;
+	  color: #5e2900;
 }
 
-body .bigfoot-footnote__button:active {
-  background: #ccc;
-  color: #111;
+body .bigfoot-footnote__button:active,
+body .bigfoot-footnote__button.is-active {
+  background: #5e2900;
+	  border: 1px solid #5e2900;
+  color: #fff;
 }
 body .bigfoot-footnote__button svg{
 	display: none;
@@ -1602,5 +1763,14 @@ body .bigfoot-footnote__button:after {
 		display: none;
 	}	
 }
+
+/* @end */
+
+/* @group body.proposal-cover-sheet-principal-investigator-information */
+
+body.proposal-cover-sheet-principal-investigator-information form > h1 {
+	margin-bottom: 32px;
+}
+
 
 /* @end */

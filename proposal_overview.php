@@ -3,7 +3,7 @@
   <? include "_includes/_head.php"; ?>
   <body class="proposal proposal-overview">
     <? include "_includes/_header.php"; ?>
-    <header class="proposal-banner">
+    <header class="proposal-header">
       <div class="wrap">
         <h1>Proposal for Solar Electric Propulsion for Agile Space Capabilities</h1>
       </div>

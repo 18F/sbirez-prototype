@@ -3,7 +3,7 @@
   <? include "_includes/_head.php"; ?>
   <body class="proposal proposal-technical-volume">
     <? include "_includes/_header.php"; ?>
-    <header class="proposal-banner">
+    <header class="proposal-header">
       <div class="wrap">
         <h1>
           <a href="proposal_overview.php">
