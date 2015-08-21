@@ -6,7 +6,11 @@
     <main role="main">
       <div class="wrap">
         <form action="home.php">
-          <h1>Sign in</h1>
+          <header class="sign-in-header">
+            <h1>Sign in</h1>
+            <span class="or">or</span>
+            <a href="sign_up.php">Sign up</a>
+          </header>
           <div class="field">
             <label>
               <span class="label-text">Email address</span>
@@ -21,8 +25,7 @@
           </div>
           <footer>
             <button class="button">Sign in</button>
-            <a ui-sref="reset" class="sign-in-reset">Forgot your password?</a>
-            <p>Need an account? <a ui-sref="signup(intention)">Sign up</a>!</p>
+            <a href="#" class="sign-in-reset">Forgot your password?</a>
           </footer>
         </form>
       </div>

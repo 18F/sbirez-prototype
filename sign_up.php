@@ -6,7 +6,11 @@
     <main role="main">
       <div class="wrap">
         <form action="sign_up_post.php">
-          <h1>Sign up</h1>
+          <header class="sign-up-header">
+            <h1>Sign up</h1>
+            <span class="or">or</span>
+            <a href="sign_in.php">Sign in</a>
+          </header>
           <div class="field">
             <label>
               <span class="label-text">Email address</span>
