@@ -1,3 +1,5 @@
+/* @override http://127.0.0.1:4000/stylesheets/styles.css */
+
 /* @override http://localhost:4001/stylesheets/styles.css */
 
 /* @override http://127.0.0.1:4000/stylesheets/styles.css */
@@ -41,26 +43,10 @@ a.a-return:hover::before{ color: #444; background: #eee;}
 p, li, dd, dt {
 	line-height: 1.4em;
 	max-width: 36em;
-	margin-bottom: 0.7em;
 }
 
-@media screen and (min-width: 533.33px) {
-	dl {
-		padding-top: 16px;
-		margin-top: 32px;
-		border-top: 1px solid #eee;
-		-webkit-column-count: 2;
-		-moz-column-count: 2;
-		-column-count: 2;
-	}	
-}
-
-dt{
-	margin-bottom: 0;
-	color: #444;
-	font-size: 0.8em;
-	font-weight: 600;
-}
+dt{ padding-top: 0.7em; }
+dd{ margin-left: 1.4em; }
 
 span.preposition{
 	font-style: italic;
@@ -68,7 +54,8 @@ span.preposition{
 	text-transform: lowercase;
 }
 
-div.wrap{
+div.wrap,
+div.wrapper{
 	width: 90%;
 	max-width: 800px;
 	margin: 0 auto;
@@ -77,12 +64,12 @@ div.wrap{
 	-webkit-box-sizing: border-box;
 }
 
-div.wrap::after{
+div.wrap::after,
+div.wrapper::after{
 	content: "";
 	display: table;
 	clear: both;
 }
-
 
 h1.primary-header {
 	font-size: 32px;
@@ -1683,6 +1670,25 @@ body.sign-up p#password-instructions{
 	margin-bottom: 0.4em;
 }
 
+@media screen and (min-width: 533.33px) {
+	.topic-show dl {
+		padding-top: 16px;
+		margin-top: 32px;
+		border-top: 1px solid #eee;
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		-column-count: 2;
+	}	
+}
+
+.topic-show dt{
+	margin-bottom: 0;
+	color: #444;
+	font-size: 0.8em;
+	font-weight: 600;
+}
+
+
 @media screen and (min-width: 711.11px) { .topic-show .topic .topic-header h1{ font-size: 28px; } }
 
 
@@ -1958,6 +1964,288 @@ body .bigfoot-footnote__button:after {
 
 body.proposal-cover-sheet-principal-investigator-information form > h1 {
 	margin-bottom: 32px;
+}
+
+
+/* @end */
+
+/* @group body.cover-sheet */
+
+main.cover-sheet{ margin: 1em; }
+
+.cover-sheet .cover-sheet--header{ position: relative; }
+
+.cover-sheet .cover-sheet--header h1 { 
+	font-weight: 600; 
+	line-height: 1.2; 
+	margin: 0 auto 1em;
+	text-align: center;
+}
+
+.cover-sheet .cover-sheet--header h1 span{ display: block; }
+.cover-sheet .cover-sheet--header p{ 
+	margin: 0 auto 3em; 
+	font-size: 14px;
+	max-width: 64em;
+	text-align: center;
+}
+
+.cover-sheet .cover-sheet--header dd,
+.cover-sheet .cover-sheet--header dt{ display: block; }
+
+.cover-sheet dt::after{ content: ":"; }
+
+.cover-sheet .cover-sheet--header .proposal-number{
+  font-size: 21px;
+  font-weight: 600;
+  display: inline;
+  margin: 0;
+}
+
+.cover-sheet .cover-sheet--header .due-date,
+.cover-sheet .cover-sheet--header .date-submitted{ 
+	margin: 0;
+	position: absolute;
+	bottom: 4px;
+	right: 0;
+}
+
+.cover-sheet .cover-sheet--header .date-submitted{ bottom: 24px; }
+.cover-sheet .cover-sheet--header dt.date-submitted{ right: 4.9em; }
+
+.cover-sheet .cover-sheet--header .due-date{
+	text-align: right;
+	font-weight: 600; 
+	display: block;
+}
+
+
+.cover-sheet .cover-sheet--agency-information,
+.cover-sheet .cover-sheet--firm-information,
+.cover-sheet .cover-sheet--eligibility,
+.cover-sheet .cover-sheet--business-information,
+.cover-sheet .cover-sheet--proposal-information,
+.cover-sheet .cover-sheet--project-team-information,
+.cover-sheet .cover-sheet--principal-investigator{
+  margin-top: 1.2em;
+  padding-top: 1.2em;
+  border-top: 2px solid #eee;
+}
+
+.cover-sheet .cover-sheet--agency-information > h1,
+.cover-sheet .cover-sheet--firm-information > h1,
+.cover-sheet .cover-sheet--eligibility > h1,
+.cover-sheet .cover-sheet--business-information > h1,
+.cover-sheet .cover-sheet--proposal-information > h1,
+.cover-sheet .cover-sheet--project-team-information > h1,
+.cover-sheet .cover-sheet--principal-investigator > h1{
+	font-weight: 600;
+	font-size: 18px;
+	margin-bottom: 0.6em;
+}
+
+.cover-sheet .cover-sheet--eligibility p.note,
+.cover-sheet .question-17 aside{
+	font-size: 14px;
+	line-height: 1.25em;
+	margin-left: 32px;
+	margin-bottom: 1em;
+	color: #444;
+}  
+.cover-sheet .cover-sheet--agency-information dd.name,
+.cover-sheet .cover-sheet--agency-information .topic-number{ font-weight: 600; }
+
+
+.cover-sheet .question{
+  padding-top: 0.4em;
+  padding-bottom: 0.6em;
+  border-top: 1px solid #e3e3e3;
+}
+
+.cover-sheet .question.question-14 > .question--text,
+.cover-sheet .question.question-15 > .question--text{
+	margin-bottom: 0.7em;
+	display: block;
+}
+
+.cover-sheet .question.question-1,
+.cover-sheet .question.question-2,
+.cover-sheet .question.question-13,
+.cover-sheet .question.question-22,
+.cover-sheet .question.question-24 {
+	border-top: 0;  
+}
+
+.cover-sheet .question .question--number,
+.cover-sheet .question .question--answer{
+	font-weight: 600;
+	color: #555;
+}
+
+.cover-sheet .question .question--number::after{
+  content: ".";
+}
+
+.cover-sheet .question .question--number,
+.cover-sheet .question .question--answer,
+.cover-sheet .question .question--text{
+  line-height: 1.4em;
+}
+
+.cover-sheet .cover-sheet--affiliated-persons > h1{ display: none; }
+
+.cover-sheet .cover-sheet--proposal-information article.technical-abstract,
+.cover-sheet .cover-sheet--proposal-information article.anticipated-benefits,
+.cover-sheet .cover-sheet--proposal-information article.key-words{
+	margin-top: 1em;
+}
+
+.cover-sheet .cover-sheet--proposal-information article.technical-abstract h1,
+.cover-sheet .cover-sheet--proposal-information article.anticipated-benefits h1,
+.cover-sheet .cover-sheet--proposal-information article.key-words h1,
+.cover-sheet .cover-sheet--affiliated-persons .person h1{
+  font-weight: 600;
+  color: #444;
+  line-height: 1.2;
+  margin-bottom: 0.4em;
+}
+
+.cover-sheet .cover-sheet--proposal-information article.technical-abstract span,
+.cover-sheet .cover-sheet--proposal-information article.anticipated-benefits span{
+	font-weight: normal;
+}
+
+.cover-sheet .cover-sheet--affiliated-persons .person{
+  margin-top: 1em;
+}
+
+@media screen and (min-width: 355.55px){
+
+	.cover-sheet .cover-sheet--affiliated-persons .person dl{ 
+		padding-left: 96px; 
+		margin-bottom: 2em;
+	}
+	.cover-sheet .cover-sheet--affiliated-persons .person dl::after{
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+	
+	.cover-sheet .cover-sheet--affiliated-persons .person dl dt,
+	.cover-sheet .cover-sheet--affiliated-persons .person dl dd{
+  		float: left;
+  		width: 100%;
+		margin: 0;
+		padding: 0;
+		padding-top: 0.4em;
+	}
+	
+	.cover-sheet .cover-sheet--affiliated-persons .person dl dt{
+		clear: left;
+  		width: 96px;
+	  	margin-left: -96px;
+	}
+
+	.cover-sheet .cover-sheet--affiliated-persons .person .signature,
+	.cover-sheet .cover-sheet--affiliated-persons .person .date{
+		display: inline-block;
+		font-size: 14px;
+		padding-top: 0.6em;
+		border-top: 1px solid;  
+	}	
+
+	.cover-sheet .cover-sheet--affiliated-persons .person .signature{
+  		width: 70%;
+	}
+	.cover-sheet .cover-sheet--affiliated-persons .person .date{
+		width: 25%;
+	}
+}
+
+@media screen and (min-width: 568.888px){
+
+	.cover-sheet .cover-sheet--agency-information dl,
+	.cover-sheet .cover-sheet--firm-information dl,
+	.cover-sheet .question.question-14 dl,
+	.cover-sheet .question.question-16 dl{ padding-left: 160px; }  
+	
+	.cover-sheet .cover-sheet--agency-information dl::after,
+	.cover-sheet .cover-sheet--firm-information dl::after,
+	.cover-sheet .question.question-14 dl::after,
+	.cover-sheet .question.question-16 dl::after{
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+	
+	.cover-sheet .cover-sheet--agency-information dl dt,
+	.cover-sheet .cover-sheet--agency-information dl dd,
+	.cover-sheet .cover-sheet--firm-information dl dt,
+	.cover-sheet .cover-sheet--firm-information dl dd,
+	.cover-sheet .question.question-14 dl dt,
+	.cover-sheet .question.question-14 dl dd,
+	.cover-sheet .question.question-16 dl dt,
+	.cover-sheet .question.question-16 dl dd{
+	  float: left;
+	  width: 100%;
+	  margin: 0;
+	  padding: 0;
+	  padding-top: 0.4em;
+	}
+	
+	.cover-sheet .question.question-16 dl dd+dd{ padding-top: 0; }
+
+	.cover-sheet .cover-sheet--agency-information dl dt,
+	.cover-sheet .cover-sheet--firm-information dl dt,
+	.cover-sheet .question.question-14 dl dt,
+	.cover-sheet .question.question-16 dl dt{
+  		clear: left;
+  		margin-left: -160px;
+  		width: 160px;
+	}
+	
+	.cover-sheet .cover-sheet--proposal-information .proposed-cost,
+	.cover-sheet .cover-sheet--proposal-information .phase,
+	.cover-sheet .cover-sheet--proposal-information .duration{
+		float: none;
+		margin: 0;
+		display: inline-block;
+		width: 16.67%;
+		margin-right: -0.4em;
+	}
+  
+  	.cover-sheet .question{
+		padding-left: 32px;
+		padding-right: 48px;
+		position: relative;
+	}
+	
+	.cover-sheet .question.question-15{ padding-right: 0; }
+	
+  	.cover-sheet .question .question--number,
+  	.cover-sheet .question .question--answer{
+		position: absolute;
+		top: 0.4em;
+		left: 0;
+		font-weight: normal;
+		text-align: right;
+		text-transform: uppercase;
+	}
+
+  	.cover-sheet .question .question--answer{
+		left: auto;
+		right: 0;
+		top: 0.6em;
+		font-size: 14px;
+		font-weight: 600;
+	}
+	
+	.cover-sheet .cover-sheet--affiliated-persons .person{
+		float: left;
+		width: 50%;
+ 
+	}
+  
 }
 
 
